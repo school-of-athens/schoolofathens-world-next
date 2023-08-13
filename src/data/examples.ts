@@ -1,5 +1,5 @@
 import Ballot from "@/types/ballot";
-import Citystate from "@/types/citystate";
+import CityState from "@/types/citystate";
 import CustomComment from "@/types/comment";
 import Post from "@/types/post";
 import User from "@/types/user";
@@ -8,7 +8,8 @@ const exampleUser: User = {
   id: 1,
   username: "philosopher42",
   points: 150,
-  profile_image: "https://xhcucozjulskkfgxiulx.supabase.co/storage/v1/object/public/test/avatar",
+  profile_image:
+    "https://xhcucozjulskkfgxiulx.supabase.co/storage/v1/object/public/test/avatar",
   created_time: new Date("2022-01-01"),
   bio: "Lover of wisdom and inquiry.",
   country: "Greece",
@@ -16,13 +17,15 @@ const exampleUser: User = {
   ageGroup: "18-24",
 };
 
-const exampleCitystate: Citystate = {
+const exampleCityState: CityState = {
   id: 1,
   name: "Athens Academy",
   description: "A place for scholars and philosophers.",
   rules: "Be respectful. No spam.",
-  profile_image: "https://xhcucozjulskkfgxiulx.supabase.co/storage/v1/object/public/test/citystate?t=2023-08-12T14%3A57%3A29.874Z",
-  background_image: "https://xhcucozjulskkfgxiulx.supabase.co/storage/v1/object/public/test/bg",
+  profile_image:
+    "https://xhcucozjulskkfgxiulx.supabase.co/storage/v1/object/public/test/citystate?t=2023-08-12T14%3A57%3A29.874Z",
+  background_image:
+    "https://xhcucozjulskkfgxiulx.supabase.co/storage/v1/object/public/test/bg",
   type: "School",
   view_access: "public",
   vote_access: "members",
@@ -51,8 +54,12 @@ const exampleDiscussionPost: Post = {
   userId: exampleUser.id,
   title: "Discussion on Ethics",
   body: "What is the nature of ethics in modern society?",
+  images: [
+    "https://upload.wikimedia.org/wikipedia/commons/a/a7/The_Acropolis_of_Athens_viewed_from_the_Hill_of_the_Muses_%2814220794964%29.jpg",
+    "https://www.travelinfusedlife.com/wp-content/uploads/2019/10/things-to-know-before-visiting-acropolis-athens-1024x1536.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/a/a7/The_Acropolis_of_Athens_viewed_from_the_Hill_of_the_Muses_%2814220794964%29.jpg",
+  ],
   type: "Discussion",
-  ballotId: null,
   upvotes: 5,
   downvotes: 0,
   citystateId: 1,
@@ -62,20 +69,20 @@ const exampleArticlePost: Post = {
   id: 2,
   created_time: new Date(),
   userId: exampleUser.id,
-  title: "ThCe Philosophy of Science",
+  title: "The Philosophy of Science",
   body: "<h1>Introduction</h1><p>This article explores...</p>",
+  images: [
+    "https://upload.wikimedia.org/wikipedia/commons/a/a7/The_Acropolis_of_Athens_viewed_from_the_Hill_of_the_Muses_%2814220794964%29.jpg",
+  ],
   type: "Article",
-  ballotId: null,
   upvotes: 8,
   downvotes: 1,
-  citystateId: null,
 };
 
 const exampleOpinionPost: Post = {
   id: 3,
   created_time: new Date(),
   userId: exampleUser.id,
-  title: null,
   body: "I strongly support the new curriculum!",
   type: "Opinion",
   ballotId: exampleBallot.id,
@@ -91,4 +98,14 @@ const exampleComment: CustomComment = {
   body: "I think ethics plays a crucial role in shaping society.",
   created_time: new Date(),
   parentCommentId: null,
+};
+
+export {
+  exampleUser,
+  exampleCityState,
+  exampleBallot,
+  exampleDiscussionPost,
+  exampleArticlePost,
+  exampleOpinionPost,
+  exampleComment,
 };

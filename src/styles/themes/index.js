@@ -1,7 +1,6 @@
 import { theme as proTheme } from '@chakra-ui/pro-theme'
 import { extendTheme, theme as baseTheme } from "@chakra-ui/react";
 import menuTheme from "./menu";
-import tabsTheme from "./tabs";
 import buttonTheme from "./button";
 import inputTheme from "./input";
 import selectTheme from "./select";
@@ -18,7 +17,6 @@ const theme = extendTheme(
   {
     components: {
       Menu: menuTheme,
-      Tabs: tabsTheme,
       Button: buttonTheme,
       Input: inputTheme,
       Select: selectTheme,

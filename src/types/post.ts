@@ -2,13 +2,14 @@ type Post = {
   id: number; // Primary Key
   created_time: Date;
   userId: number;
-  title: string | null;
+  title?: string;
   body: string; // JSON or plain text
+  images?: string[]; // Array of image URLs
   type: "Discussion" | "Article" | "Opinion";
-  ballotId: number | null; // Nullable, Foreign Key (Ballots)
+  ballotId?: number; // Nullable, Foreign Key (Ballots)
   upvotes: number;
   downvotes: number;
-  citystateId: number | null; // Nullable, Foreign Key (Citystates)
+  citystateId?: number; // Nullable, Foreign Key (Citystates)
 };
 
 export default Post;

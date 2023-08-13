@@ -40,6 +40,7 @@ const tag = definePartsStyle({
   },
   // icon: defineStyle({}),
   container: {
+    bg: "white",
     py: 1,
     px: 3,
     rounded: "full",

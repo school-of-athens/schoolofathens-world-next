@@ -1,4 +1,4 @@
-type Citystate = {
+type CityState = {
   id: number; // Primary Key
   name: string;
   description: string;
@@ -12,4 +12,4 @@ type Citystate = {
   roles: { [name: string]: { permissions: object } }; // JSON Object of Roles
 };
 
-export default Citystate;
+export default CityState;

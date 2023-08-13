@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@/styles/global.css";
+import "@/styles/globals.css";
 import ChakraProviders from "@/context/ChakraProviders";
 
 export const metadata: Metadata = {

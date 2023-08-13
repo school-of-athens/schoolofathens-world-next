@@ -1,7 +1,9 @@
 "use client";
 
 import { Flex } from "@chakra-ui/react";
-import { MainSidebar } from "@/features/Sidebar";
+import { BottomBar, DrawerSidebar, MainSidebar } from "@/layouts/Sidebar";
+import { useContext } from "react";
+import { AppContext, AppProvider } from "@/context/AppContext";
 
 export default function RootLayout({
   children,
@@ -9,14 +11,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Flex
-      minH="100vh"
-      // flexDirection={{ base: "column", md: "row" }}
-    >
-      <MainSidebar />
-      {children}
-      {/* BottomBar */}
-      {/* DrawerSidebar */}
-    </Flex>
+    <AppProvider>
+      <Flex minH="100vh" flexDirection={{ base: "column", md: "row" }}>
+        <MainSidebar />
+        {children}
+      </Flex>
+        <DrawerSidebar />
+
+      <BottomBar />
+    </AppProvider>
   );
 }

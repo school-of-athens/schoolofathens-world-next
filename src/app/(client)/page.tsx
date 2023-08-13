@@ -1,5 +1,6 @@
 "use client";
 
+import HeadBar from "@/layouts/HeadBar";
 import {
   Flex,
   Container,
@@ -16,37 +17,20 @@ import NextLink from "next/link";
 export default function MainSite() {
   return (
     <Flex bg="gray.50" w="full" flexDirection="column">
-      <Flex
-        w="full"
-        position="sticky"
-        top="0"
-        zIndex={2}
-        justifyContent="space-between"
-        h="4rem"
-        alignItems="center"
-        bg="white"
-        borderBottom="2px solid"
-        borderBottomColor="gray.300"
-      >
-        <Container maxW="container.lg">
-          <Flex justifyContent="space-between" alignItems="center">
-            {/* DrawerButton */}
-
-            <Text
-              fontWeight="900"
-              fontSize="lg"
-              fontFamily="Merriweather"
-              color="gray.600"
-            >
-              Welcome to the School of Athens
-            </Text>
-            <ButtonGroup spacing={4}>
-              <Button variant="lightBlueWithShadow">Sign In</Button>
-              <Button variant="grayWithShadow">Sign Up</Button>
-            </ButtonGroup>
-          </Flex>
-        </Container>
-      </Flex>
+      <HeadBar>
+        <Text
+          fontWeight="900"
+          fontSize="lg"
+          fontFamily="Merriweather"
+          color="gray.600"
+        >
+          Welcome to the School of Athens
+        </Text>
+        <ButtonGroup spacing={4}>
+          <Button variant="lightBlueWithShadow">Sign In</Button>
+          <Button variant="grayWithShadow">Sign Up</Button>
+        </ButtonGroup>
+      </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}
         // h="calc(100vh - 5rem)"
