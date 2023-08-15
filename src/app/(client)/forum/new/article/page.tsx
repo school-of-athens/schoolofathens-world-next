@@ -106,7 +106,7 @@ export default function NewArticle() {
       </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}
-        h={{ base: "auto", md: "calc(100vh - 5rem)" }}
+        h={{ base: "auto", md: "calc(100vh - 4rem)" }}
       >
         <Box my={6}>
           <MenuBar editor={editor} />

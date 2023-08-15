@@ -1,6 +1,13 @@
 "use client";
 
-import { Button, ButtonGroup, Container, Flex, Heading, Text } from "@chakra-ui/react";
+import {
+  Button,
+  ButtonGroup,
+  Container,
+  Flex,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
 import HeadBar from "@/layouts/HeadBar";
 
 export default function Community() {
@@ -22,12 +29,11 @@ export default function Community() {
       </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}
-        h="calc(100vh - 5rem)"
+        h="calc(100vh - 4rem)"
         py={12}
       >
         <Flex w="full" h="full" justifyContent="center" alignItems="center">
-            <Heading size="lg">🚧 Under Development</Heading>
-
+          <Heading size="lg">🚧 Under Development</Heading>
         </Flex>
       </Container>
     </Flex>

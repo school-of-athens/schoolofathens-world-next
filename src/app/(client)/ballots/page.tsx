@@ -59,7 +59,7 @@ export default function Ballots() {
       </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}
-        // h="calc(100vh - 5rem)"
+        // h="calc(100vh - 4rem)"
         pt={8}
       >
         {/* Page Header */}

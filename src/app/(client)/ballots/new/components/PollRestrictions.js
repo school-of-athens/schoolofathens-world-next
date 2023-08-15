@@ -11,7 +11,7 @@ import {
   Switch,
 } from "@chakra-ui/react";
 
-function PollRestrictions({ setActiveStep, newVote, setNewVote, submit }) {
+function PollRestrictions({ setActiveStep, newVote, setNewVote }) {
   return (
     <>
       <Heading mb={8}>Who can vote and who can view</Heading>
@@ -45,7 +45,6 @@ function PollRestrictions({ setActiveStep, newVote, setNewVote, submit }) {
       <Box textAlign="center" mt={12}>
         <Button
           variant="blue"
-          onClick={submit}
         >
           Propose
         </Button>

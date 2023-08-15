@@ -1,5 +1,5 @@
 import ArticleCard from "@/components/ArticleCard";
-import OpinionCard from "@/components/OpinionCard";
+import OpinionCard from "@/components/OpinionCardWithBallot";
 import DiscussionCard from "@/components/DiscussionCard";
 import { VStack, GridItem, Card, Heading, Flex } from "@chakra-ui/react";
 import {

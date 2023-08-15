@@ -5,7 +5,7 @@ export default function ForumWrap({ children }: { children: React.ReactNode }) {
   return (
     <Container
       maxW={{ base: "container.md", lg: "container.lg" }}
-      h={{ base: "auto", md: "calc(100vh - 5rem)" }}
+      h={{ base: "auto", md: "calc(100vh - 4rem)" }}
     >
       <Grid
         templateColumns="repeat(12, 1fr)"

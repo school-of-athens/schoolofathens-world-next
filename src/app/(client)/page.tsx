@@ -33,7 +33,7 @@ export default function MainSite() {
       </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}
-        // h="calc(100vh - 5rem)"
+        // h="calc(100vh - 4rem)"
         py={12}
       >
         <Heading mb={4} size="lg">

@@ -5,23 +5,40 @@ import VoteType from "./components/VoteType";
 import PollInfo from "./components/PollInfo";
 import PollOptions from "./components/PollOptions";
 import PollRestrictions from "./components/PollRestrictions";
-import useNewVote from "./hooks/useNewVote";
-import useSubmit from "./hooks/useSubmit";
 import { Box, Grid, GridItem, useSteps } from "@chakra-ui/react";
+import { useState } from "react";
 
 const Propose = () => {
-  const [newVote, setNewVote] = useNewVote();
+  const [newVote, setNewVote] = useState({
+    type: "Poll",
+    title: "",
+    // topics: [],
+    description: "",
+    options: [
+      {
+        title: "",
+        description: "",
+        votes: 0,
+      },
+      {
+        title: "",
+        description: "",
+        votes: 0,
+      },
+    ],
+    // viewRestriction: [],
+    // voteRestriction: [],
+    // due: null
+  });
 
   const { activeStep, setActiveStep } = useSteps({
     index: 0,
     count: 4,
   });
 
-  const submit = useSubmit(setActiveStep, newVote);
-
   return (
     <Box className="container">
-      <Grid minHeight="calc(100vh - 8rem)" templateColumns="repeat(12, 1fr)">
+      <Grid minHeight="calc(100vh - 4rem)" templateColumns="repeat(12, 1fr)">
         <GridItem colSpan={{ base: 12, md: 4, lg: 3 }}>
           <NewVoteStepper
             activeStep={activeStep}
@@ -59,7 +76,6 @@ const Propose = () => {
               setActiveStep={setActiveStep}
               newVote={newVote}
               setNewVote={setNewVote}
-              submit={submit}
             />
           )}
         </GridItem>

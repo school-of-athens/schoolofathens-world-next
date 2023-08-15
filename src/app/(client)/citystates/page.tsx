@@ -95,7 +95,7 @@ export default function CityStates() {
               placeholder="Search"
               variant="primary"
               borderRadius="xl"
-              boxShadow="4px 4px 0 0 var(--chakra-colors-gray-300)"
+              // boxShadow="4px 4px 0 0 var(--chakra-colors-gray-300)"
             />
           </InputGroup>
         </Container>
@@ -119,7 +119,7 @@ export default function CityStates() {
 
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}
-        // h="calc(100vh - 5rem)"
+        // h="calc(100vh - 4rem)"
         pt={4}
       >
         {/* Page Header */}

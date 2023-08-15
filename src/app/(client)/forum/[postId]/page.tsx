@@ -39,7 +39,7 @@ export default function NewDiscussion() {
       </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}
-        h={{ base: "auto", md: "calc(100vh - 5rem)" }}
+        h={{ base: "auto", md: "calc(100vh - 4rem)" }}
       ></Container>
     </Flex>
   );
