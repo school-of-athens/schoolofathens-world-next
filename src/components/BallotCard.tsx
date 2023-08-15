@@ -19,7 +19,7 @@ export default function BallotCard() {
   return (
     <Card variant="grayWithShadow">
       <Link href="/ballots/1234">
-        <CardBody textAlign="center">
+        <CardBody textAlign="center" px={6} pt={4} pb={3}>
           <Flex justifyContent="space-between" alignItems="center" mb={4}>
             <Text mb={0} fontSize="sm" color="blue.400">
               POLL
@@ -32,14 +32,14 @@ export default function BallotCard() {
               </Button>
             </Text>
           </Flex>
-          <Heading size={{ base: "sm", lg: "md" }} mb={4}>
+          <Heading size="xs" mb={2}>
             Vote Title
           </Heading>
 
-          <Box mb={4}>1234 votes | 5432 opinions</Box>
-          <Box display="flex" justifyContent="space-between" px={2} mb={4}>
-            <Heading size={{ base: "xs", lg: "sm" }}>Option 1</Heading>
-            <Heading size={{ base: "xs", lg: "sm" }}>Option 2</Heading>
+          <Box mb={2}>1234 votes | 5432 opinions</Box>
+          <Box display="flex" justifyContent="space-between" px={2} mb={2}>
+            <Text>Option 1</Text>
+            <Text>Option 2</Text>
           </Box>
           <Box
             mt={2}
@@ -80,13 +80,22 @@ export default function BallotCard() {
               </Text>
             </Flex>
           </Box>
-        </CardBody>
 
-        <CardFooter mt={4} pt={3}>
-          <Text mb={0} mt={1} fontSize="sm">
-            Public | Due date
-          </Text>
-        </CardFooter>
+          <Flex
+            w="full"
+            justifyContent="space-between"
+            alignItems="center"
+            mt={4}
+            pt={3}
+            color="gray.600"
+            borderTop="2px solid"
+            borderColor="gray.300"
+          >
+            <Text mb={0} fontSize="sm">
+              Public | Due date
+            </Text>
+          </Flex>
+        </CardBody>
       </Link>
     </Card>
   );

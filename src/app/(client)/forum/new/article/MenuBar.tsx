@@ -1,24 +1,23 @@
-import { Button, Tooltip, Wrap, WrapItem } from "@chakra-ui/react";
+import { Button, Tooltip, Wrap, WrapItem, Icon } from "@chakra-ui/react";
 import { useCallback } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBold,
-  faItalic,
-  faStrikethrough,
-  faCode,
-  faBroom,
-  faParagraph,
-  faHeading,
-  faListUl,
-  faListOl,
-  faQuoteLeft,
-  faArrowsUpToLine,
-  faArrowLeft,
-  faRotateLeft,
-  faRotateRight,
-  faImage,
-} from "@fortawesome/free-solid-svg-icons";
-import { faFileCode } from "@fortawesome/free-regular-svg-icons";
+  FaBold,
+  FaItalic,
+  FaStrikethrough,
+  FaCode,
+  FaBroom,
+  FaParagraph,
+  FaHeading,
+  FaListUl,
+  FaListOl,
+  FaQuoteLeft,
+  FaArrowsUpToLine,
+  FaArrowLeft,
+  FaRotateLeft,
+  FaRotateRight,
+  FaImage,
+  FaFileCode,
+} from "react-icons/fa6";
 
 export default function MenuBar({ editor }: { editor: any }) {
   if (!editor) {
@@ -34,17 +33,16 @@ export default function MenuBar({ editor }: { editor: any }) {
   }, [editor]);
 
   return (
-    <Wrap spacing={0}>
+    <Wrap spacing={2}>
       <WrapItem>
         <Tooltip label="bold">
           <Button
             variant="light"
-            minW="unset"
             onClick={() => editor.chain().focus().toggleBold().run()}
             disabled={!editor.can().chain().focus().toggleBold().run()}
             className={editor.isActive("bold") ? "is-active" : ""}
           >
-            <FontAwesomeIcon icon={faBold} />
+            <Icon as={FaBold} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -53,12 +51,12 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="italic">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().toggleItalic().run()}
             disabled={!editor.can().chain().focus().toggleItalic().run()}
             className={editor.isActive("italic") ? "is-active" : ""}
           >
-            <FontAwesomeIcon icon={faItalic} />
+            <Icon as={FaItalic} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -66,12 +64,12 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="strike">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().toggleStrike().run()}
             disabled={!editor.can().chain().focus().toggleStrike().run()}
             className={editor.isActive("strike") ? "is-active" : ""}
           >
-            <FontAwesomeIcon icon={faStrikethrough} />
+            <Icon as={FaStrikethrough} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -79,12 +77,12 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="code">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().toggleCode().run()}
             disabled={!editor.can().chain().focus().toggleCode().run()}
             className={editor.isActive("code") ? "is-active" : ""}
           >
-            <FontAwesomeIcon icon={faCode} />
+            <Icon as={FaCode} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -92,10 +90,10 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="clear marks">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().unsetAllMarks().run()}
           >
-            <FontAwesomeIcon icon={faBroom} />
+            <Icon as={FaBroom} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -104,11 +102,11 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="paragraph">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().setParagraph().run()}
             className={editor.isActive("paragraph") ? "is-active" : ""}
           >
-            <FontAwesomeIcon icon={faParagraph} />
+            <Icon as={FaParagraph} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -116,7 +114,7 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="heading 1">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() =>
               editor.chain().focus().toggleHeading({ level: 1 }).run()
             }
@@ -124,7 +122,7 @@ export default function MenuBar({ editor }: { editor: any }) {
               editor.isActive("heading", { level: 1 }) ? "is-active" : ""
             }
           >
-            <FontAwesomeIcon icon={faHeading} fontSize="1.1rem" />
+            <Icon as={FaHeading} fontSize="1.1rem" />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -132,7 +130,7 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="heading 2">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() =>
               editor.chain().focus().toggleHeading({ level: 2 }).run()
             }
@@ -140,7 +138,7 @@ export default function MenuBar({ editor }: { editor: any }) {
               editor.isActive("heading", { level: 2 }) ? "is-active" : ""
             }
           >
-            <FontAwesomeIcon icon={faHeading} fontSize="0.9rem" />
+            <Icon as={FaHeading} fontSize="0.9rem" />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -148,11 +146,11 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="bullet list">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().toggleBulletList().run()}
             className={editor.isActive("bulletList") ? "is-active" : ""}
           >
-            <FontAwesomeIcon icon={faListUl} />
+            <Icon as={FaListUl} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -160,11 +158,11 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="ordered list">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().toggleOrderedList().run()}
             className={editor.isActive("orderedList") ? "is-active" : ""}
           >
-            <FontAwesomeIcon icon={faListOl} />
+            <Icon as={FaListOl} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -172,11 +170,11 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="code block">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().toggleCodeBlock().run()}
             className={editor.isActive("codeBlock") ? "is-active" : ""}
           >
-            <FontAwesomeIcon icon={faFileCode} />
+            <Icon as={FaFileCode} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -184,11 +182,11 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="blockquote">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().toggleBlockquote().run()}
             className={editor.isActive("blockquote") ? "is-active" : ""}
           >
-            <FontAwesomeIcon icon={faQuoteLeft} />
+            <Icon as={FaQuoteLeft} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -196,10 +194,10 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="horizontal rule">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().setHorizontalRule().run()}
           >
-            <FontAwesomeIcon icon={faArrowsUpToLine} />
+            <Icon as={FaArrowsUpToLine} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -207,10 +205,10 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="hard break">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().setHardBreak().run()}
           >
-            <FontAwesomeIcon icon={faArrowLeft} />
+            <Icon as={FaArrowLeft} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -218,11 +216,11 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="undo">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().undo().run()}
             disabled={!editor.can().chain().focus().undo().run()}
           >
-            <FontAwesomeIcon icon={faRotateLeft} />
+            <Icon as={FaRotateLeft} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -230,18 +228,18 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="redo">
           <Button
             variant="light"
-            minW="unset"
+
             onClick={() => editor.chain().focus().redo().run()}
             disabled={!editor.can().chain().focus().redo().run()}
           >
-            <FontAwesomeIcon icon={faRotateRight} />
+            <Icon as={FaRotateRight} />
           </Button>
         </Tooltip>
       </WrapItem>
       <WrapItem>
         <Tooltip label="image">
-          <Button variant="light" minW="unset" onClick={addImage}>
-            <FontAwesomeIcon icon={faImage} />
+          <Button variant="light" onClick={addImage}>
+            <Icon as={FaImage} />
           </Button>
         </Tooltip>
       </WrapItem>

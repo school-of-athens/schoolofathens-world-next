@@ -9,7 +9,7 @@ import {
   CardBody,
   Icon,
 } from "@chakra-ui/react";
-import { FaRegSquareCaretDown, FaRegSquareCaretUp } from "react-icons/fa6";
+import { FaRegSquareCaretDown, FaRegSquareCaretUp, FaSquareCaretDown, FaSquareCaretUp } from "react-icons/fa6";
 
 export default function OpinionCard({ opinion }: { opinion: Post }) {
   return (
@@ -27,7 +27,7 @@ export default function OpinionCard({ opinion }: { opinion: Post }) {
         <Text fontSize="lg">{opinion.body}</Text>
         <Flex
           w="full"
-          justifyContent="space-between"
+          justifyContent="end"
           alignItems="center"
           mt={4}
           pt={3}
@@ -35,10 +35,9 @@ export default function OpinionCard({ opinion }: { opinion: Post }) {
           borderTop="2px solid"
         borderColor="gray.300"
         >
-          1234 Comments
           <Flex alignItems="center">
-            <Icon as={FaRegSquareCaretUp} w={5} h={5} color="gray.500" me={2} _hover={{color: "blue.500"}} />
-            <Icon as={FaRegSquareCaretDown} w={5} h={5} color="gray.500" me={2} _hover={{color: "blue.500"}} />
+            <Icon as={FaSquareCaretUp} w={5} h={5} color="gray.500" me={2} _hover={{color: "blue.500"}} />
+            <Icon as={FaSquareCaretDown} w={5} h={5} color="gray.500" me={2} _hover={{color: "blue.500"}} />
             
             123
           </Flex>

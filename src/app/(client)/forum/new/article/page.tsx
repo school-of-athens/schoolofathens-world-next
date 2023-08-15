@@ -10,6 +10,7 @@ import {
   Box,
   Code,
   Heading,
+  Input,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import HeadBar from "@/layouts/HeadBar";
@@ -90,27 +91,40 @@ export default function NewArticle() {
         >
           New Article
         </Text>
-        <ButtonGroup spacing={4}>
+        <Flex alignItems="center">
           {/* <Button variant="lightBlueWithShadow">Sign In</Button>
           <Button variant="grayWithShadow">Sign Up</Button> */}
-          <Link
-            as={NextLink}
-            href="/forum/guidelines"
-            display="flex"
-            alignItems="center"
+          <Text
+            border="2px solid"
+            px={2}
+            borderRadius="md"
+            borderColor="gray.300"
+            me={4}
           >
-            Guidelines
-          </Link>
+            {" "}
+            Words count: {editor.storage.characterCount.words()}
+          </Text>
           <Button variant="blueWithShadow">Publish</Button>
-        </ButtonGroup>
+        </Flex>
       </HeadBar>
+      <Box bg="blue.200" w="full" h="10rem"></Box>
+        <Input placeholder="Title" size="lg" />
+      <Box
+        bg="white"
+        borderBottom="2px solid"
+        borderBottomColor="gray.300"
+        position="sticky"
+        top="4rem"
+        zIndex={1}
+      >
+        <Container maxW={{ base: "container.md", lg: "container.lg" }} py={3}>
+          <MenuBar editor={editor} />
+        </Container>
+      </Box>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}
         h={{ base: "auto", md: "calc(100vh - 4rem)" }}
       >
-        <Box my={6}>
-          <MenuBar editor={editor} />
-        </Box>
         <Prose>
           <EditorContent editor={editor} />
         </Prose>
@@ -122,15 +136,6 @@ export default function NewArticle() {
           >
           </Prose>
         )} */}
-        <Text>
-          Current words: {editor.storage.characterCount.words()}
-          <br />
-          Type:{" "}
-          {content?.content.length < 5 &&
-          editor.storage.characterCount.words() < 250
-            ? "Post"
-            : "Article"}
-        </Text>
       </Container>
     </Flex>
   );

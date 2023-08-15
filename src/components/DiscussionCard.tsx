@@ -14,8 +14,14 @@ import {
 import {
   FaChevronLeft,
   FaChevronRight,
+  FaComment,
+  FaEye,
+  FaRegComment,
+  FaRegEye,
   FaRegSquareCaretDown,
   FaRegSquareCaretUp,
+  FaSquareCaretDown,
+  FaSquareCaretUp,
 } from "react-icons/fa6";
 import { useState } from "react";
 
@@ -109,23 +115,30 @@ export default function DiscussionCard({ discussion }: { discussion: Post }) {
         borderTop="2px solid"
         borderColor="gray.300"
       >
-        1234 Comments
+        <Flex alignItems="center">
+          <Icon as={FaRegEye} w={5} h={5} color="gray.500" me={2} />
+          123
+        </Flex>
+        <Flex alignItems="center">
+          <Icon as={FaRegComment} w={5} h={5} color="gray.500" me={2} />
+          123
+        </Flex>
         <Flex alignItems="center">
           <Icon
-            as={FaRegSquareCaretUp}
+            as={FaSquareCaretUp}
             w={5}
             h={5}
             color="gray.500"
             me={2}
-            _hover={{ color: "blue.500" }}
+            _hover={{ color: "blue.400" }}
           />
           <Icon
-            as={FaRegSquareCaretDown}
+            as={FaSquareCaretDown}
             w={5}
             h={5}
             color="gray.500"
             me={2}
-            _hover={{ color: "blue.500" }}
+            _hover={{ color: "blue.400" }}
           />
           123
         </Flex>

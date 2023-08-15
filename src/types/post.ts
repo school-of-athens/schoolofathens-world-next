@@ -3,7 +3,7 @@ type Post = {
   created_time: Date;
   userId: number;
   title?: string;
-  body: string; // JSON or plain text
+  body: any; // JSON or plain text
   images?: string[]; // Array of image URLs
   type: "Discussion" | "Article" | "Opinion";
   ballotId?: number; // Nullable, Foreign Key (Ballots)

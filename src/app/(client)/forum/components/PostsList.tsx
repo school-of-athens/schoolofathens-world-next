@@ -9,6 +9,7 @@ import {
 } from "@/data/examples";
 import { useState } from "react";
 import getRandomInt from "@/utils/randInt";
+import BallotCard from "@/components/BallotCard";
 
 export default function PostsList() {
   const [width, setWidth] = useState(30);
@@ -45,40 +46,7 @@ export default function PostsList() {
         <ArticleCard article={exampleArticlePost} />
         <OpinionCard opinion={exampleOpinionPost} />
         <DiscussionCard discussion={exampleDiscussionPost} />
-        <Card variant="grayWithShadow" py={8} px={6}>
-          <Heading size="md" textAlign="center" mb={3}>
-            Vote Title
-          </Heading>
-          <Flex
-            h="2rem"
-            w="full"
-            bg="gray.100"
-            justifyContent="space-between"
-            borderRadius="full"
-            overflow="hidden"
-            transition="all 0.2s linear"
-          >
-            <Flex
-              onClick={handleClick}
-              h="full"
-              w={`${width}%`}
-              bg="red.100"
-              _hover={{ bg: "red.200" }}
-              transition="all 0.5s ease"
-            ></Flex>
-            <Flex
-              onClick={handleClick}
-              h="full"
-              w={`${100 - width}%`}
-              bg="blue.100"
-              _hover={{ bg: "blue.200" }}
-              transition="all 0.5s ease"
-            ></Flex>
-          </Flex>
-        </Card>
-        <Card variant="grayWithShadow" h="15rem"></Card>
-        <Card variant="grayWithShadow" h="15rem"></Card>
-        <Card variant="grayWithShadow" h="15rem"></Card>
+        <BallotCard />
       </VStack>
     </GridItem>
   );
