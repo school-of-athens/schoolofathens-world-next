@@ -74,7 +74,7 @@ export default function DiscussionCard({ discussion }: { discussion: Post }) {
             right="3"
             top="45%"
             onClick={() => {
-              if (currentSlide < discussion.images.length) {
+              if (discussion.images && currentSlide < discussion.images.length) {
                 setCurrentSlide(currentSlide + 1);
               }
             }}
