@@ -24,14 +24,14 @@ export default function SidebarButton({
       aria-label={children as string}
       hasArrow
       placement="right"
-      display={{ base: "none", md: "flex", lg: "none" }}
+      display={{ base: "none", md: "flex", xl: "none" }}
     >
       <Link href={path}>
         <Button
-          justifyContent={{ base: "center", lg: "start" }}
+          justifyContent={{ base: "center", xl: "start" }}
           alignItems="center"
           cursor="pointer"
-          px={{base: 3, lg: 8}}
+          px={{base: 3, xl: 8}}
           py={6}
           w="100%"
           color={"/" + pathname.split("/", 2)[1] === path ? "blue.500" : "gray.500"}
@@ -46,7 +46,7 @@ export default function SidebarButton({
           <Box
             display={
               mode === "responsive"
-                ? { base: "none", lg: "flex" }
+                ? { base: "none", xl: "flex" }
                 : mode === "collapsed"
                 ? "none"
                 : "flex"

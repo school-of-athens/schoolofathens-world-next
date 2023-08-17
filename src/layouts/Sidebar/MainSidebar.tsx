@@ -28,7 +28,7 @@ export default function MainSidebar() {
       display={{ base: "none", md: "flex" }}
       borderRight="2px solid"
       borderRightColor="gray.300"
-      w={{ base: "5rem", lg: "20rem" }}
+      w={{ base: "5rem", xl: "20rem" }}
       h="100vh"
       position="sticky"
       top="0"
@@ -60,7 +60,7 @@ export default function MainSidebar() {
           justifyContent="center"
           alignItems="start"
           flexDirection="column"
-          px={{ base: 4, lg: 6 }}
+          px={{ base: 4, xl: 6 }}
           mb={4}
           cursor="pointer"
           color="gray.600"
@@ -77,7 +77,7 @@ export default function MainSidebar() {
               _hover={{ transform: "rotate(360deg)" }}
             />
             <Text
-              display={{ base: "none", lg: "flex" }}
+              display={{ base: "none", xl: "flex" }}
               fontFamily="Merriweather"
               fontWeight="900"
               fontSize="lg"
@@ -90,7 +90,7 @@ export default function MainSidebar() {
           display="flex"
           flexDirection="column"
           mt={2}
-          px={{ base: 2, lg: 4 }}
+          px={{ base: 2, xl: 4 }}
         >
           <SidebarButton
             leftIcon={<FaLandmark size={20} />}
@@ -158,15 +158,15 @@ export default function MainSidebar() {
         height="5rem"
       >
         <HStack
-          justifyContent={{ base: "center", lg: "space-between" }}
+          justifyContent={{ base: "center", xl: "space-between" }}
           spacing="3"
-          bg={{ base: "none", lg: "gray.100" }}
+          bg={{ base: "none", xl: "gray.100" }}
           w="full"
-          p={{ base: 0, lg: 4 }}
+          p={{ base: 0, xl: 4 }}
           borderRadius="lg"
         >
           <Avatar boxSize="10" src="https://i.pravatar.cc/300" />
-          <Box display={{ base: "none", lg: "flex" }}>
+          <Box display={{ base: "none", xl: "flex" }}>
             <Text textStyle="sm" fontWeight="medium">
               John Doe
             </Text>
