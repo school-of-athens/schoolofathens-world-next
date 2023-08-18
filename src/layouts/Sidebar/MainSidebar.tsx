@@ -91,6 +91,7 @@ export default function MainSidebar() {
           flexDirection="column"
           mt={2}
           px={{ base: 2, xl: 4 }}
+          spacing={2}
         >
           <SidebarButton
             leftIcon={<FaLandmark size={20} />}
