@@ -11,6 +11,8 @@ import {
   Heading,
   Icon,
   Avatar,
+  Textarea,
+  VStack,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import HeadBar from "@/layouts/HeadBar";
@@ -78,19 +80,27 @@ export default function NewDiscussion() {
         w="full"
         borderTop="2px solid"
         borderColor="gray.300"
+        pt={4}
+        pb={12}
+        position="relative"
       >
-        <Box bg="blue.100" py={3}>
-          <Container
-            maxW={{ base: "container.md", lg: "container.lg" }}
-          >
-            <Heading size="sm">
-              Comments
-            </Heading>
-          </Container>
-        </Box>
-          <Comment />
-          <Comment />
-          <Comment />
+        <Container maxW={{ base: "container.md", lg: "container.md" }}>
+          <Flex flexDir="column">
+            <Heading size="sm">Comments</Heading>
+            <Flex mt={4}>
+              <Textarea rows={3} me={4} variant="primary" placeholder="Write a comment..." />
+              <Button variant="blue">Post</Button>
+            </Flex>
+          </Flex>
+          <VStack mt={8}>
+            <Comment />
+            <Comment />
+            <Comment />
+            <Comment />
+            <Comment />
+            <Comment />
+          </VStack>
+        </Container>
       </Box>
     </Flex>
   );

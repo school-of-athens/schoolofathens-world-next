@@ -42,7 +42,7 @@ export default function BallotHome() {
         </ButtonGroup>
       </HeadBar>
       <Box
-        bg="gray.100"
+        bg="gray.50"
         pt={12}
         pb={8}
         borderBottom="2px solid"
@@ -100,7 +100,7 @@ export default function BallotHome() {
             </Flex>
           </Box>
 
-          <SimpleGrid columns={{ base: 1, md: 2 }} mt={6}>
+          <SimpleGrid columns={{ base: 1, md: 2 }} mt={4}>
             <Accordion
               onClick={isOpen ? onClose : onOpen}
               index={isOpen ? [0] : []}
@@ -109,13 +109,8 @@ export default function BallotHome() {
                 <AccordionButton
                   display="flex"
                   justifyContent="space-between"
-                  borderStart="2px solid"
-                  borderTop="2px solid"
-                  borderBottom="2px solid"
-                  borderColor="gray.300"
                   borderStartRadius="xl"
-                  bg="white"
-                  _hover={{ bg: "red.50" }}
+                  _hover={{ bg: "gray.200" }}
                 >
                   <Heading m={0} size={{ base: "xs", lg: "sm" }}>
                     Option 1
@@ -141,13 +136,8 @@ export default function BallotHome() {
                 <AccordionButton
                   display="flex"
                   justifyContent="space-between"
-                  borderEnd="2px solid"
-                  borderTop="2px solid"
-                  borderBottom="2px solid"
-                  borderColor="gray.300"
                   borderEndRadius="xl"
-                  bg="white"
-                  _hover={{ bg: "blue.50" }}
+                  _hover={{ bg: "gray.200" }}
                 >
                   <AccordionIcon />
                   <Heading my={0} mx={4} size={{ base: "xs", lg: "sm" }}>
