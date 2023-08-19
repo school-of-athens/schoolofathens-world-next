@@ -65,7 +65,7 @@ export default function NewDiscussion() {
         </Heading>
       </Flex>
       <Container
-        maxW={{ base: "container.md", lg: "container.md" }}
+        maxW={{ base: "container.md" }}
         // h={{ base: "auto", md: "calc(100vh - 4rem)" }}
         py={4}
       >

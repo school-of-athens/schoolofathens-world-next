@@ -22,13 +22,13 @@ export default function ArticleCard({ article }: { article: Post }) {
   return (
     <Card
       variant="grayWithShadow"
-      direction={{ base: "column", xl: "row" }}
+      direction={{ base: "column", lg: "row" }}
       overflow="hidden"
     >
       {article.images && (
         <Image
           src={article.images[0]}
-          w={{ base: "full", xl: "40%" }}
+          w={{ base: "full", lg: "40%" }}
           objectFit="cover"
         />
       )}

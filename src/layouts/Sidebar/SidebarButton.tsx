@@ -7,7 +7,6 @@ export default function SidebarButton({
   children,
   leftIcon,
   path,
-  active = false,
   mode = "responsive",
 }: {
   children: string | ReactNode | undefined;
@@ -24,19 +23,20 @@ export default function SidebarButton({
       aria-label={children as string}
       hasArrow
       placement="right"
-      display={{ base: "none", md: "flex", lg: "none" }}
+      display={{ base: "none", md: "flex", xl: "none" }}
     >
       <Link href={path}>
         <Button
-          justifyContent={{ base: "center", lg: "start" }}
+          justifyContent={{ base: "center", xl: "start" }}
           alignItems="center"
           cursor="pointer"
-          px={{base: 3, lg: 8}}
-          py={6}
+          px={{base: 3, xl: 8}}
+          py="1.4rem"
           w="100%"
           color={"/" + pathname.split("/", 2)[1] === path ? "blue.500" : "gray.500"}
           bg={"/" + pathname.split("/", 2)[1] === path ? "blue.50" : "transparent"}
-          border={"/" + pathname.split("/", 2)[1] === path ? "2px solid" : "none"}
+          border="2px"
+          borderColor={"/" + pathname.split("/", 2)[1] === path ? "blue.400" : "transparent"}
           fontSize="md"
           _hover={{
             bg: "/" + pathname.split("/", 2)[1] === path ? "blue.50" : "gray.100",
@@ -46,7 +46,7 @@ export default function SidebarButton({
           <Box
             display={
               mode === "responsive"
-                ? { base: "none", lg: "flex" }
+                ? { base: "none", xl: "flex" }
                 : mode === "collapsed"
                 ? "none"
                 : "flex"
