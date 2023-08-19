@@ -18,9 +18,11 @@ import {
   Stack,
   Text,
   useBreakpointValue,
+  Link,
+  SimpleGrid,
+  Image,
 } from "@chakra-ui/react";
 import HeadBar from "@/layouts/HeadBar";
-import Link from "next/link";
 
 export default function SignUp() {
   return (
@@ -39,130 +41,64 @@ export default function SignUp() {
           <Button variant="grayWithShadow">Sign Up</Button>
         </ButtonGroup>
       </HeadBar>
-      <Flex
-        minH={{ base: "auto", md: "100vh" }}
-        bgGradient={{
-          md: "linear(to-r, bg.accent.default 50%, bg.surface 50%)",
-        }}
+      <SimpleGrid
+        columns={{ base: 1, md: 2 }}
+        width="full"
+        minH="calc(100vh - 4rem)"
       >
-        <Flex maxW="8xl" mx="auto" width="full">
-          <Box flex="1" display={{ base: "none", md: "block" }}>
-            <Flex
-              direction="column"
-              px={{ base: "4", md: "8" }}
-              height="full"
-              color="fg.accent.default"
-            >
-              <Flex align="center" h="24">
-                {/* <Logo /> */}
-              </Flex>
-              <Flex flex="1" align="center">
-                <Stack spacing="8">
-                  <Stack spacing="6">
-                    <Heading size={{ md: "lg", xl: "xl" }}>
-                      Start making your dreams come true
-                    </Heading>
-                    <Text
-                      textStyle="lg"
-                      maxW="md"
-                      fontWeight="medium"
-                      color="fg.accent.muted"
-                    >
-                      Create an account and discover the worlds' best UI
-                      component framework.
-                    </Text>
-                  </Stack>
-                  <HStack spacing="4">
-                    <AvatarGroup
-                      size="md"
-                      max={useBreakpointValue({ base: 2, lg: 5 })}
-                      borderColor="fg.accent.default"
-                    >
-                      <Avatar
-                        name="Ryan Florence"
-                        src="https://bit.ly/ryan-florence"
-                      />
-                      <Avatar
-                        name="Segun Adebayo"
-                        src="https://bit.ly/sage-adebayo"
-                      />
-                      <Avatar
-                        name="Kent Dodds"
-                        src="https://bit.ly/kent-c-dodds"
-                      />
-                      <Avatar
-                        name="Prosper Otemuyiwa"
-                        src="https://bit.ly/prosper-baba"
-                      />
-                      <Avatar
-                        name="Christian Nwamba"
-                        src="https://bit.ly/code-beast"
-                      />
-                    </AvatarGroup>
-                    <Text fontWeight="medium">Join 10.000+ users</Text>
-                  </HStack>
-                </Stack>
-              </Flex>
-              <Flex align="center" h="24">
-                <Text color="fg.accent.subtle" textStyle="sm">
-                  © 2022 Chakra UI. All rights reserved.
-                </Text>
-              </Flex>
-            </Flex>
+        <Flex
+          direction="column"
+          height="full"
+          bg="blue.200"
+          display={{ base: "none", md: "flex" }}
+          position="relative"
+          borderEnd="2px"
+          borderColor="gray.300"
+        >
+          <Image h="full" w="full" objectFit="cover" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/The_Acropolis_of_Athens_viewed_from_the_Hill_of_the_Muses_%2814220794964%29.jpg" />
+          <Box position="absolute" bottom="0" bg="blackAlpha.800" w="full" color="white" px={4} py={2}>
+            Image Caption
           </Box>
-          <Center flex="1">
-            <Stack
-              spacing="8"
-              px={{ base: "4", md: "8" }}
-              py={{ base: "12", md: "48" }}
-              width="full"
-              maxW="md"
-            >
-              <Stack spacing="6">
-                {/* <LogoIcon display={{ md: "none" }} /> */}
-                <Stack spacing={{ base: "2", md: "3" }} textAlign="center">
-                  <Heading size={{ base: "xs", md: "sm" }}>
-                    Log in to your account
-                  </Heading>
-                  <Text color="fg.muted">
-                    Don't have an account? <Link href="#">Sign up</Link>
-                  </Text>
-                </Stack>
-              </Stack>
-              <Stack spacing="6">
-                <Stack spacing="5">
-                  <FormControl>
-                    <FormLabel htmlFor="email">Email</FormLabel>
-                    <Input
-                      id="email"
-                      placeholder="Enter your email"
-                      type="email"
-                    />
-                  </FormControl>
-                  <FormControl>
-                    <FormLabel htmlFor="password">Password</FormLabel>
-                    <Input
-                      id="password"
-                      placeholder="********"
-                      type="password"
-                    />
-                  </FormControl>
-                </Stack>
-                <HStack justify="space-between">
-                  <Checkbox defaultChecked>Remember me</Checkbox>
-                  <Button variant="text" size="sm">
-                    Forgot password
-                  </Button>
-                </HStack>
-                <Stack spacing="4">
-                  <Button>Sign in</Button>
-                  <Button variant="secondary">Sign in with Google</Button>
-                </Stack>
-              </Stack>
-            </Stack>
-          </Center>
         </Flex>
-      </Flex>
+        <Center>
+          <Stack spacing="6" px={{ base: "4", md: "8" }} width="full" maxW="md">
+            <Stack spacing={{ base: "2", md: "3" }} textAlign="center">
+              <Heading size={{ base: "xs", md: "sm" }}>Sign Up</Heading>
+              <Text color="fg.muted">
+                Already have an account? <Link href="#">Log in</Link>
+              </Text>
+            </Stack>
+            <FormControl>
+              <FormLabel htmlFor="email">Email</FormLabel>
+              <Input
+                variant="primary"
+                id="email"
+                placeholder="Enter your email"
+                type="email"
+              />
+              <FormLabel htmlFor="password" mt={4}>
+                Password
+              </FormLabel>
+              <Input
+                variant="primary"
+                id="password"
+                placeholder="********"
+                type="password"
+              />
+            </FormControl>
+            <HStack justify="center">
+              {/* <Checkbox defaultChecked>Remember me</Checkbox> */}
+              <Link fontSize="sm" fontWeight="bold">
+                Forgot password
+              </Link>
+            </HStack>
+            <Stack spacing="4">
+              <Button variant="blueWithShadow">Sign up</Button>
+              <Button variant="gray">Sign up with Google</Button>
+            </Stack>
+          </Stack>
+        </Center>
+      </SimpleGrid>
     </Flex>
   );
 }
