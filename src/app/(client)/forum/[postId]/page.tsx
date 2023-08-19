@@ -11,6 +11,7 @@ import {
   Heading,
   Icon,
   Avatar,
+  Input,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import HeadBar from "@/layouts/HeadBar";
@@ -64,7 +65,7 @@ export default function NewDiscussion() {
         </Heading>
       </Flex>
       <Container
-        maxW={{ base: "container.md", lg: "container.lg" }}
+        maxW={{ base: "container.md", lg: "container.md" }}
         // h={{ base: "auto", md: "calc(100vh - 4rem)" }}
         py={4}
       >
@@ -78,19 +79,26 @@ export default function NewDiscussion() {
         w="full"
         borderTop="2px solid"
         borderColor="gray.300"
+        position="relative"
       >
-        <Box bg="blue.100" py={3}>
-          <Container
-            maxW={{ base: "container.md", lg: "container.lg" }}
-          >
-            <Heading size="sm">
-              Comments
-            </Heading>
+        <Box
+          bg="blue.100"
+          py={2}
+          borderBottom="2px solid"
+          borderColor="gray.300"
+        >
+          <Container maxW={{ base: "container.md", lg: "container.md" }}>
+            <Heading size="sm">Comments</Heading>
           </Container>
         </Box>
+        <Container maxW={{ base: "container.md", lg: "container.md" }}>
           <Comment />
           <Comment />
           <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+        </Container>
       </Box>
     </Flex>
   );

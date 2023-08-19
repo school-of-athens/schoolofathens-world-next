@@ -32,44 +32,43 @@ export default function Login() {
           <Button variant="grayWithShadow">Sign Up</Button>
         </ButtonGroup>
       </HeadBar>
-      <Box
-        bgGradient={{ sm: "linear(to-r, blue.600, blue.400)" }}
-        py={{ base: "12", md: "24" }}
+      <Flex
+        bg="blue.300"
+        justify="center"
+        align="center"
+        minH="calc(100vh - 4rem)"
       >
         <Container
           maxW="md"
           py={{ base: "0", sm: "8" }}
           px={{ base: "4", sm: "10" }}
-          bg={{ base: "transparent", sm: "bg.surface" }}
-          boxShadow={{ base: "none", sm: "xl" }}
+          bg="white"
           borderRadius={{ base: "none", sm: "xl" }}
+          h={{ base: "full", md: "auto" }}
         >
           <Stack spacing="8">
-            <Stack spacing="6" align="center">
-              {/* <Logo /> */}
               <Stack spacing="3" textAlign="center">
                 <Heading size="xs">Log in to your account</Heading>
                 <Text color="fg.muted">Start making your dreams come true</Text>
               </Stack>
-            </Stack>
             <Stack spacing="6">
-              <Button variant="secondary">Continue with Google</Button>
+              <Button variant="gray">Continue with Google</Button>
               <Divider />
               <Stack spacing="4">
-                <Input placeholder="Enter your email" />
-                <Button>Continue with email</Button>
+                <Input variant="primary" placeholder="Enter your email" />
+                <Button variant="blueWithShadow">Continue with email</Button>
               </Stack>
             </Stack>
             <Text textStyle="sm" color="fg.muted" textAlign="center">
-              Having trouble logging in? <Link href="#">Contact us</Link>
+              Don't have an account yet? <Link href="#">Create an account</Link>
             </Text>
-            <Text textStyle="xs" color="fg.subtle" textAlign="center">
+            {/* <Text textStyle="xs" color="fg.subtle" textAlign="center">
               By continuing, you acknowledge that you have read, understood, and
-              agree to our terms and condition
-            </Text>
+              agree to our terms and condition.
+            </Text> */}
           </Stack>
         </Container>
-      </Box>
+      </Flex>
     </Flex>
   );
 }
