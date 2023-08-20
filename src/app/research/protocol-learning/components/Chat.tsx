@@ -1,6 +1,6 @@
 import { Avatar, Flex, Text } from "@chakra-ui/react";
 
-export default function Chat({name, message}: {name: string, message: string}) {
+export default function Chat() {
   return (
     <Flex>
       <Avatar me={6} />
