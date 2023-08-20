@@ -2,6 +2,7 @@
 
 import { Button, ButtonGroup, Container, Flex, Heading, Text } from "@chakra-ui/react";
 import HeadBar from "@/layouts/HeadBar";
+import AuthButtonGroup from "@/components/AuthButtonGroup";
 
 export default function Team() {
   return (
@@ -15,10 +16,7 @@ export default function Team() {
         >
           Team
         </Text>
-        <ButtonGroup spacing={4}>
-          <Button variant="lightBlueWithShadow">Sign In</Button>
-          <Button variant="grayWithShadow">Sign Up</Button>
-        </ButtonGroup>
+        <AuthButtonGroup />
       </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}

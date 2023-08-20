@@ -9,6 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import HeadBar from "@/layouts/HeadBar";
+import AuthButtonGroup from "@/components/AuthButtonGroup";
 
 export default function Dashboard() {
   return (
@@ -22,10 +23,8 @@ export default function Dashboard() {
         >
           Dashboard
         </Text>
-        <ButtonGroup spacing={4}>
-          <Button variant="lightBlueWithShadow">Sign In</Button>
-          <Button variant="grayWithShadow">Sign Up</Button>
-        </ButtonGroup>
+        <AuthButtonGroup />
+
       </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}

@@ -1,5 +1,6 @@
 "use client";
 
+import AuthButtonGroup from "@/components/AuthButtonGroup";
 import HeadBar from "@/layouts/HeadBar";
 import {
   Flex,
@@ -26,10 +27,7 @@ export default function MainSite() {
         >
           Welcome to the School of Athens
         </Text>
-        <ButtonGroup spacing={4}>
-          <Button variant="lightBlueWithShadow">Sign In</Button>
-          <Button variant="grayWithShadow">Sign Up</Button>
-        </ButtonGroup>
+        <AuthButtonGroup />
       </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}

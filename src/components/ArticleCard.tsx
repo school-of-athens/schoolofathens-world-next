@@ -17,6 +17,7 @@ import {
   FaRegEye,
   FaSort,
 } from "react-icons/fa6";
+import UserButton from "./UserButton";
 
 export default function ArticleCard({ article }: { article: Post }) {
   return (
@@ -37,10 +38,7 @@ export default function ArticleCard({ article }: { article: Post }) {
           <Text mb={0} fontSize="sm" color="blue.400">
             ARTICLE
           </Text>
-          <Button variant="ghostGray">
-            <Avatar size="xs" mr={2} />
-            Username
-          </Button>
+          <UserButton />
         </Flex>
         <Heading size="xs">{article.title}</Heading>
         <Flex

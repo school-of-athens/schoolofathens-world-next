@@ -30,6 +30,7 @@ import {
   SimpleGrid,
   Box,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 import {
   FaDiscord,
   FaGithub,
@@ -66,7 +67,9 @@ export default function CityStates() {
           <Link display="flex" alignItems="center">
             Guidelines
           </Link>
-          <Button variant="blueWithShadow">Start a New Ballot</Button>
+          <Link as={NextLink} href="/citystates/new">
+          <Button variant="blueWithShadow">Start a New CityState</Button>
+          </Link>
         </ButtonGroup>
       </HeadBar>
       <Flex

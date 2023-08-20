@@ -1,6 +1,8 @@
 "use client";
 
 import {
+  Avatar,
+  Box,
   Button,
   ButtonGroup,
   Container,
@@ -9,6 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import HeadBar from "@/layouts/HeadBar";
+import AuthButtonGroup from "@/components/AuthButtonGroup";
 
 export default function Profile() {
   return (
@@ -22,16 +25,17 @@ export default function Profile() {
         >
           Profile
         </Text>
-        <ButtonGroup spacing={4}>
-          <Button variant="lightBlueWithShadow">Sign In</Button>
-          <Button variant="grayWithShadow">Sign Up</Button>
-        </ButtonGroup>
+        <AuthButtonGroup />
       </HeadBar>
-      <Container
-        maxW={{ base: "container.md", lg: "container.lg" }}
-        h="calc(100vh - 4rem)"
-        py={12}
-      >
+      <Box w="full" borderBottom="2px" borderColor="gray.300" bg="gray.100">
+        <Container maxW={{ base: "container.md", lg: "container.lg" }} py={12}>
+          <Flex alignItems="center">
+            <Avatar size="2xl" me={12} />
+            <Heading size="md">User Name</Heading>
+          </Flex>
+        </Container>
+      </Box>
+      <Container maxW={{ base: "container.md", lg: "container.lg" }} py={12}>
         <Flex w="full" h="full" justifyContent="center" alignItems="center">
           <Heading size="lg">🚧 Under Development</Heading>
         </Flex>

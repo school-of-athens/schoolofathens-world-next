@@ -13,6 +13,7 @@ import {
 import HeadBar from "@/layouts/HeadBar";
 import { BlogPost } from './BlogPost'
 import { posts } from './data'
+import AuthButtonGroup from "@/components/AuthButtonGroup";
 
 export default function Research() {
   return (
@@ -26,10 +27,7 @@ export default function Research() {
         >
           Research
         </Text>
-        <ButtonGroup spacing={4}>
-          <Button variant="lightBlueWithShadow">Sign In</Button>
-          <Button variant="grayWithShadow">Sign Up</Button>
-        </ButtonGroup>
+        <AuthButtonGroup />
       </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}

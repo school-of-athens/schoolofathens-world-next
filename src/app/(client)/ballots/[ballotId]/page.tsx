@@ -21,6 +21,7 @@ import {
 import HeadBar from "@/layouts/HeadBar";
 import OpinionCard from "@/components/OpinionCard";
 import { exampleOpinionPost } from "@/data/examples";
+import AuthButtonGroup from "@/components/AuthButtonGroup";
 
 export default function BallotHome() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -36,10 +37,8 @@ export default function BallotHome() {
         >
           Ballot
         </Text>
-        <ButtonGroup spacing={4}>
-          <Button variant="lightBlueWithShadow">Sign In</Button>
-          <Button variant="grayWithShadow">Sign Up</Button>
-        </ButtonGroup>
+        <AuthButtonGroup />
+
       </HeadBar>
       <Box
         bg="gray.50"

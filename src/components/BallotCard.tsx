@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { FaSort } from "react-icons/fa6";
+import UserButton from "./UserButton";
 
 export default function BallotCard() {
   return (
@@ -26,10 +27,7 @@ export default function BallotCard() {
             </Text>
             <Text>
               Started by{" "}
-              <Button variant="ghostGray">
-                <Avatar size="xs" mr={2} />
-                Username
-              </Button>
+              <UserButton />
             </Text>
           </Flex>
           <Heading size="xs" mb={2}>
