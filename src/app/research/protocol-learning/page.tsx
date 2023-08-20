@@ -13,7 +13,6 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import Avatar from "avataaars";
 import Chat from "./components/Chat";
 import { useState } from "react";
 
