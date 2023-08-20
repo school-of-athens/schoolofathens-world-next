@@ -9,7 +9,17 @@ import {
   CardBody,
   Icon,
 } from "@chakra-ui/react";
-import { FaComment, FaEye, FaRegComment, FaRegEye, FaRegSquareCaretDown, FaRegSquareCaretUp, FaSquareCaretDown, FaSquareCaretUp } from "react-icons/fa6";
+import {
+  FaComment,
+  FaEye,
+  FaRegComment,
+  FaRegEye,
+  FaRegSquareCaretDown,
+  FaRegSquareCaretUp,
+  FaSquareCaretDown,
+  FaSquareCaretUp,
+} from "react-icons/fa6";
+import UserButton from "./UserButton";
 
 export default function OpinionCardWithBallot({ opinion }: { opinion: Post }) {
   return (
@@ -19,10 +29,7 @@ export default function OpinionCardWithBallot({ opinion }: { opinion: Post }) {
           <Text mb={0} fontSize="sm" color="blue.400">
             OPINION
           </Text>
-          <Button variant="ghostGray">
-            <Avatar size="xs" mr={2} />
-            Username
-          </Button>
+          <UserButton />
         </Flex>
         <Text fontSize="lg">{opinion.body}</Text>
         <Flex
@@ -33,27 +40,35 @@ export default function OpinionCardWithBallot({ opinion }: { opinion: Post }) {
           pt={3}
           color="gray.600"
           borderTop="2px solid"
-        borderColor="gray.300"
+          borderColor="gray.300"
         >
-                  <Flex alignItems="center">
-          <Icon as={FaRegEye} w={5} h={5} color="gray.500" me={2} />
-          123
-        </Flex>
           <Flex alignItems="center">
-            <Icon as={FaSquareCaretUp} w={5} h={5} color="gray.500" me={2} _hover={{color: "blue.500"}} />
-            <Icon as={FaSquareCaretDown} w={5} h={5} color="gray.500" me={2} _hover={{color: "blue.500"}} />
-            
+            <Icon as={FaRegEye} w={5} h={5} color="gray.500" me={2} />
+            123
+          </Flex>
+          <Flex alignItems="center">
+            <Icon
+              as={FaSquareCaretUp}
+              w={5}
+              h={5}
+              color="gray.500"
+              me={2}
+              _hover={{ color: "blue.500" }}
+            />
+            <Icon
+              as={FaSquareCaretDown}
+              w={5}
+              h={5}
+              color="gray.500"
+              me={2}
+              _hover={{ color: "blue.500" }}
+            />
             123
           </Flex>
         </Flex>
       </CardBody>
 
-      <Flex
-        flexDirection="column"
-        bg="gray.50"
-        px={6}
-        py={4}
-      >
+      <Flex flexDirection="column" bg="gray.100" px={6} py={4}>
         <Heading size="2xs" mb={2} ms={2}>
           Vote Title
         </Heading>

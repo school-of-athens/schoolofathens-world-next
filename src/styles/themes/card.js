@@ -38,7 +38,7 @@ const baseStyle = definePartsStyle({
 const grayWithShadow = defineStyle({
   container: {
     // boxShadow: "none"
-    transition: "all 0.2s ease-in-out",
+    transition: "box-shadow 0.2s ease-in-out",
 
     // py: 3,
     // px: 6,
@@ -64,7 +64,7 @@ const grayWithShadow = defineStyle({
 const grayWithShadowFixed = defineStyle({
   container: {
     // boxShadow: "none"
-    transition: "all 0.2s ease-in-out",
+    transition: "box-shadow 0.2s ease-in-out",
 
     // py: 3,
     // px: 6,

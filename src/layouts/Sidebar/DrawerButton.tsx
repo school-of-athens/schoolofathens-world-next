@@ -13,7 +13,7 @@ export default function DrawerButton() {
         src="/logo.svg"
         h="2.5rem"
         transform={BottomBarIsOpen ? "rotate(180deg)" : "rotate(0)"}
-        transition="all 0.2s linear"
+        transition="rotate 0.2s linear"
       />
     </Button>
   );

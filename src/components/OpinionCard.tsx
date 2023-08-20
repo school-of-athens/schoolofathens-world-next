@@ -10,19 +10,17 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { FaRegSquareCaretDown, FaRegSquareCaretUp, FaSquareCaretDown, FaSquareCaretUp } from "react-icons/fa6";
+import UserButton from "./UserButton";
 
 export default function OpinionCard({ opinion }: { opinion: Post }) {
   return (
     <Card variant="grayWithShadow" overflow="hidden">
       <CardBody px={6} pt={4} pb={3}>
-        <Flex justifyContent="space-between" alignItems="center" mb={4}>
-          <Text mb={0} fontSize="sm" color="blue.400">
+        <Flex justifyContent="space-between" alignItems="center" mb={4} ms="-0.5rem">
+          {/* <Text mb={0} fontSize="sm" color="blue.400">
             OPINION
-          </Text>
-          <Button variant="ghostGray">
-            <Avatar size="xs" mr={2} />
-            Username
-          </Button>
+          </Text> */}
+          <UserButton />
         </Flex>
         <Text fontSize="lg">{opinion.body}</Text>
         <Flex

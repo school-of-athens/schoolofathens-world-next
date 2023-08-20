@@ -38,51 +38,54 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="bold">
           <Button
             variant="light"
+            p={0}
             onClick={() => editor.chain().focus().toggleBold().run()}
             disabled={!editor.can().chain().focus().toggleBold().run()}
             className={editor.isActive("bold") ? "is-active" : ""}
+            borderEndRadius="0"
+            borderEnd="none"
           >
-            <Icon as={FaBold} />
+            <Icon boxSize={4} as={FaBold} />
           </Button>
         </Tooltip>
-      </WrapItem>
-
-      <WrapItem>
         <Tooltip label="italic">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().toggleItalic().run()}
             disabled={!editor.can().chain().focus().toggleItalic().run()}
             className={editor.isActive("italic") ? "is-active" : ""}
+            borderStartRadius="0"
+            borderEndRadius="0"
+            borderEnd="none"
           >
-            <Icon as={FaItalic} />
+            <Icon boxSize={4} as={FaItalic} />
           </Button>
         </Tooltip>
-      </WrapItem>
-      <WrapItem>
         <Tooltip label="strike">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().toggleStrike().run()}
             disabled={!editor.can().chain().focus().toggleStrike().run()}
             className={editor.isActive("strike") ? "is-active" : ""}
+            borderStartRadius="0"
+            borderEndRadius="0"
+            borderEnd="none"
           >
-            <Icon as={FaStrikethrough} />
+            <Icon boxSize={4} as={FaStrikethrough} />
           </Button>
         </Tooltip>
-      </WrapItem>
-      <WrapItem>
         <Tooltip label="code">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().toggleCode().run()}
             disabled={!editor.can().chain().focus().toggleCode().run()}
             className={editor.isActive("code") ? "is-active" : ""}
+            borderStartRadius="0"
           >
-            <Icon as={FaCode} />
+            <Icon boxSize={4} as={FaCode} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -90,10 +93,10 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="clear marks">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().unsetAllMarks().run()}
           >
-            <Icon as={FaBroom} />
+            <Icon boxSize={4} as={FaBroom} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -102,43 +105,52 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="paragraph">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().setParagraph().run()}
             className={editor.isActive("paragraph") ? "is-active" : ""}
+            borderEndRadius="0"
+            borderEnd="none"
           >
-            <Icon as={FaParagraph} />
+            <Icon boxSize={4} as={FaParagraph} />
           </Button>
         </Tooltip>
-      </WrapItem>
-      <WrapItem>
         <Tooltip label="heading 1">
           <Button
             variant="light"
-
+            p={0}
             onClick={() =>
               editor.chain().focus().toggleHeading({ level: 1 }).run()
             }
             className={
               editor.isActive("heading", { level: 1 }) ? "is-active" : ""
             }
+            borderStartRadius="0"
+            borderEndRadius="0"
+            borderEnd="none"
           >
-            <Icon as={FaHeading} fontSize="1.1rem" />
+            <Icon boxSize={5} as={FaHeading} />
           </Button>
         </Tooltip>
-      </WrapItem>
-      <WrapItem>
         <Tooltip label="heading 2">
           <Button
             variant="light"
-
+            p={0}
             onClick={() =>
               editor.chain().focus().toggleHeading({ level: 2 }).run()
             }
             className={
               editor.isActive("heading", { level: 2 }) ? "is-active" : ""
             }
+            borderStartRadius="0"
           >
-            <Icon as={FaHeading} fontSize="0.9rem" />
+            <Icon boxSize={4} as={FaHeading} />
+          </Button>
+        </Tooltip>
+      </WrapItem>
+      <WrapItem>
+        <Tooltip label="image">
+          <Button variant="light" p={0} onClick={addImage}>
+            <Icon boxSize={4} as={FaImage} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -146,47 +158,50 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="bullet list">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().toggleBulletList().run()}
             className={editor.isActive("bulletList") ? "is-active" : ""}
+            borderEndRadius="0"
+            borderEnd="none"
           >
-            <Icon as={FaListUl} />
+            <Icon boxSize={4} as={FaListUl} />
           </Button>
         </Tooltip>
-      </WrapItem>
-      <WrapItem>
         <Tooltip label="ordered list">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().toggleOrderedList().run()}
             className={editor.isActive("orderedList") ? "is-active" : ""}
+            borderStartRadius="0"
+            borderEndRadius="0"
+            borderEnd="none"
           >
-            <Icon as={FaListOl} />
+            <Icon boxSize={4} as={FaListOl} />
           </Button>
         </Tooltip>
-      </WrapItem>
-      <WrapItem>
         <Tooltip label="code block">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().toggleCodeBlock().run()}
             className={editor.isActive("codeBlock") ? "is-active" : ""}
+            borderStartRadius="0"
+            borderEndRadius="0"
+            borderEnd="none"
           >
-            <Icon as={FaFileCode} />
+            <Icon boxSize={4} as={FaFileCode} />
           </Button>
         </Tooltip>
-      </WrapItem>
-      <WrapItem>
         <Tooltip label="blockquote">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().toggleBlockquote().run()}
             className={editor.isActive("blockquote") ? "is-active" : ""}
+            borderStartRadius="0"
           >
-            <Icon as={FaQuoteLeft} />
+            <Icon boxSize={4} as={FaQuoteLeft} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -194,21 +209,22 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="horizontal rule">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().setHorizontalRule().run()}
+            borderEndRadius="0"
+            borderEnd="none"
           >
-            <Icon as={FaArrowsUpToLine} />
+            <Icon boxSize={4} as={FaArrowsUpToLine} />
           </Button>
         </Tooltip>
-      </WrapItem>
-      <WrapItem>
         <Tooltip label="hard break">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().setHardBreak().run()}
+            borderStartRadius="0"
           >
-            <Icon as={FaArrowLeft} />
+            <Icon boxSize={4} as={FaArrowLeft} />
           </Button>
         </Tooltip>
       </WrapItem>
@@ -216,33 +232,28 @@ export default function MenuBar({ editor }: { editor: any }) {
         <Tooltip label="undo">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().undo().run()}
             disabled={!editor.can().chain().focus().undo().run()}
+            borderEndRadius="0"
+            borderEnd="none"
           >
-            <Icon as={FaRotateLeft} />
+            <Icon boxSize={4} as={FaRotateLeft} />
           </Button>
         </Tooltip>
-      </WrapItem>
-      <WrapItem>
         <Tooltip label="redo">
           <Button
             variant="light"
-
+            p={0}
             onClick={() => editor.chain().focus().redo().run()}
             disabled={!editor.can().chain().focus().redo().run()}
+            borderStartRadius="0"
           >
-            <Icon as={FaRotateRight} />
+            <Icon boxSize={4} as={FaRotateRight} />
           </Button>
         </Tooltip>
       </WrapItem>
-      <WrapItem>
-        <Tooltip label="image">
-          <Button variant="light" onClick={addImage}>
-            <Icon as={FaImage} />
-          </Button>
-        </Tooltip>
-      </WrapItem>
+      
     </Wrap>
   );
 }

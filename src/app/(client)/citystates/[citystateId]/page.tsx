@@ -46,6 +46,7 @@ import {
   exampleDiscussionPost,
   exampleOpinionPost,
 } from "@/data/examples";
+import AuthButtonGroup from "@/components/AuthButtonGroup";
 
 export default function CityStateHome() {
   return (
@@ -59,10 +60,8 @@ export default function CityStateHome() {
         >
           CityState
         </Text>
-        <ButtonGroup spacing={4}>
-          <Button variant="lightBlueWithShadow">Sign In</Button>
-          <Button variant="grayWithShadow">Sign Up</Button>
-        </ButtonGroup>
+        <AuthButtonGroup />
+
       </HeadBar>
       <Box scrollSnapType="y mandatory">
         <Box
@@ -99,7 +98,7 @@ export default function CityStateHome() {
               py={2}
               borderRadius="xl"
               _hover={{ borderColor: "gray.400", bg: "gray.100" }}
-              transition="all 0.2s"
+              transition="background 0.2s"
             >
               <Flex alignItems="center">
                 <Heading size="xs" me={4}>

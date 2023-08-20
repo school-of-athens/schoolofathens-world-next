@@ -117,10 +117,7 @@ export default function MainSidebar() {
           </SidebarButton>
         </Stack>
 
-        <Flex
-          my={4}
-          justifyContent="center"
-        >
+        <Flex my={4} justifyContent="center">
           <Divider borderTopWidth="2px" w="75%" borderColor="gray.300" />
         </Flex>
         {/* Citystates */}
@@ -158,21 +155,23 @@ export default function MainSidebar() {
         bg="white"
         height="5rem"
       >
-        <HStack
-          justifyContent={{ base: "center", xl: "space-between" }}
-          spacing="3"
-          bg={{ base: "none", xl: "gray.100" }}
-          w="full"
-          p={{ base: 0, xl: 4 }}
-          borderRadius="lg"
-        >
-          <Avatar boxSize="10" src="https://i.pravatar.cc/300" />
-          <Box display={{ base: "none", xl: "flex" }}>
-            <Text textStyle="sm" fontWeight="medium">
-              John Doe
-            </Text>
-          </Box>
-        </HStack>
+        <Link href="/u/1234">
+          <HStack
+            justifyContent={{ base: "center", xl: "space-between" }}
+            spacing="3"
+            bg={{ base: "none", xl: "gray.100" }}
+            w="full"
+            p={{ base: 0, xl: 4 }}
+            borderRadius="lg"
+          >
+            <Avatar boxSize="10" src="https://i.pravatar.cc/300" />
+            <Box display={{ base: "none", xl: "flex" }}>
+              <Text textStyle="sm" fontWeight="medium">
+                John Doe
+              </Text>
+            </Box>
+          </HStack>
+        </Link>
       </Flex>
       {/* <Box flex="1" justifySelf="stretch" alignSelf="stretch" mb="48px"></Box> */}
     </Flex>

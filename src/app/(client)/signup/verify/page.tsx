@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import HeadBar from "@/layouts/HeadBar";
 import { FaEnvelopeOpenText } from "react-icons/fa6";
+import AuthButtonGroup from "@/components/AuthButtonGroup";
 
 export default function Verify() {
   return (
@@ -25,10 +26,8 @@ export default function Verify() {
         >
           Verify Your Email
         </Text>
-        <ButtonGroup spacing={4}>
-          <Button variant="lightBlueWithShadow">Sign In</Button>
-          <Button variant="grayWithShadow">Sign Up</Button>
-        </ButtonGroup>
+        <AuthButtonGroup />
+
       </HeadBar>
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}

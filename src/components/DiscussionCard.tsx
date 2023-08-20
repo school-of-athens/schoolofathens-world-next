@@ -24,6 +24,7 @@ import {
   FaSquareCaretUp,
 } from "react-icons/fa6";
 import { useState } from "react";
+import UserButton from "./UserButton";
 
 export default function DiscussionCard({ discussion }: { discussion: Post }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,10 +35,7 @@ export default function DiscussionCard({ discussion }: { discussion: Post }) {
         <Text mb={0} fontSize="sm" color="blue.400">
           DISCUSSION
         </Text>
-        <Button variant="ghostGray">
-          <Avatar size="xs" mr={2} />
-          Username
-        </Button>
+        <UserButton />
       </Flex>
       <Text fontWeight="900" fontSize="xl" mb={2}>
         {discussion.title}

@@ -11,6 +11,8 @@ import {
   Code,
   Heading,
   Input,
+  Textarea,
+  Divider,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import HeadBar from "@/layouts/HeadBar";
@@ -22,6 +24,7 @@ import Image from "@tiptap/extension-image";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
 import Typography from "@tiptap/extension-typography";
 import CharacterCount from "@tiptap/extension-character-count";
+import EditableTitle from "../components/EditableTitle";
 
 export default function NewArticle() {
   const [content, setContent] = useState<any>(null);
@@ -107,8 +110,6 @@ export default function NewArticle() {
           <Button variant="blueWithShadow">Publish</Button>
         </Flex>
       </HeadBar>
-      <Box bg="blue.200" w="full" h="10rem"></Box>
-        <Input placeholder="Title" size="lg" />
       <Box
         bg="white"
         borderBottom="2px solid"
@@ -121,21 +122,52 @@ export default function NewArticle() {
           <MenuBar editor={editor} />
         </Container>
       </Box>
+      {/* <Box bg="blue.200" w="full" h="15rem"></Box>
       <Container
-        maxW={{ base: "container.md", lg: "container.lg" }}
-        h={{ base: "auto", md: "calc(100vh - 4rem)" }}
+        maxW={{ base: "container.md", lg: "container.md" }}
+        minH="calc(100vh - 4rem)"
+        pt={4}
+      >
+        <EditableTitle />
+        <Divider my={4} borderTop="2px" borderColor="gray.300" />
+        <Prose>
+          <EditorContent editor={editor} />
+        </Prose>
+      </Container> */}
+      <Box bg="blue.200" w="full" h="15rem"></Box>
+      <Flex justifyContent="center">
+        {/* <Heading
+          textAlign="center"
+          size="lg"
+          bg="gray.50"
+          py={2}
+          px={4}
+          mt="-1rem"
+          borderBottom="2px solid"
+          borderColor="gray.300"
+        >
+          This is the title
+        </Heading> */}
+        <Box
+          textAlign="center"
+          bg="gray.50"
+          // py={2}
+          mt="-1rem"
+          borderBottom="2px solid"
+          minW="30%"
+          maxW="50%"
+        >
+          <EditableTitle />
+        </Box>
+      </Flex>
+      <Container
+        maxW={{ base: "container.md" }}
+        // h={{ base: "auto", md: "calc(100vh - 4rem)" }}
+        py={4}
       >
         <Prose>
           <EditorContent editor={editor} />
         </Prose>
-        {/* {content && (
-          <Prose
-            dangerouslySetInnerHTML={{
-              __html: generateHTML(content, [StarterKit, Image]),
-            }}
-          >
-          </Prose>
-        )} */}
       </Container>
     </Flex>
   );

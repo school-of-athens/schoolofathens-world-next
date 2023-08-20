@@ -12,18 +12,13 @@ import {
   Heading,
   Container,
   VStack,
-  Card,
-  ButtonGroup,
   Link,
-  Tabs,
-  TabList,
-  Tab,
-  TabIndicator,
-  InputLeftElement,
+  ButtonGroup,
   InputRightElement,
   Wrap,
   Checkbox,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useState } from "react";
 import getRandomInt from "@/utils/randInt";
@@ -49,16 +44,16 @@ export default function Ballots() {
           Ballots
         </Text>
         <ButtonGroup spacing={4}>
-          {/* <Button variant="lightBlueWithShadow">Sign In</Button>
-          <Button variant="grayWithShadow">Sign Up</Button> */}
           <Link display="flex" alignItems="center">
             Guidelines
           </Link>
-          <Button variant="blueWithShadow">Start a New Ballot</Button>
+          <Link as={NextLink} href="/ballots/new">
+            <Button variant="blueWithShadow">Start a New Ballot</Button>
+          </Link>
         </ButtonGroup>
       </HeadBar>
       <Container
-        maxW={{ base: "container.md", lg: "container.md" }}
+        maxW={{ base: "container.md", lg: "container.lg" }}
         // h="calc(100vh - 4rem)"
         pt={8}
       >
@@ -99,11 +94,21 @@ export default function Ballots() {
           </Tabs>
         </Stack> */}
         <Wrap spacing={2} mb={2}>
-          <Checkbox variant="tag" borderColor="blue.400">Public</Checkbox>
-          <Checkbox variant="tag" borderColor="blue.400">CityStates</Checkbox>
-          <Checkbox variant="tag" borderColor="blue.400">Permanent</Checkbox>
-          <Checkbox variant="tag" borderColor="blue.400">Active</Checkbox>
-          <Checkbox variant="tag" borderColor="blue.400">Archived</Checkbox>
+          <Checkbox variant="tag" borderColor="blue.400">
+            Public
+          </Checkbox>
+          <Checkbox variant="tag" borderColor="blue.400">
+            CityStates
+          </Checkbox>
+          <Checkbox variant="tag" borderColor="blue.400">
+            Permanent
+          </Checkbox>
+          <Checkbox variant="tag" borderColor="blue.400">
+            Active
+          </Checkbox>
+          <Checkbox variant="tag" borderColor="blue.400">
+            Archived
+          </Checkbox>
         </Wrap>
         <Wrap spacing={2}>
           <Checkbox variant="tag">General</Checkbox>
