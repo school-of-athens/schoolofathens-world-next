@@ -7,9 +7,14 @@ import {
   Container,
   ButtonGroup,
   Link,
+  Box,
+  Icon,
+  Textarea,
+  Stack,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import HeadBar from "@/layouts/HeadBar";
+import { FaImage } from "react-icons/fa6";
 
 export default function NewDiscussion() {
   return (
@@ -37,10 +42,55 @@ export default function NewDiscussion() {
           <Button variant="blueWithShadow">Publish</Button>
         </ButtonGroup>
       </HeadBar>
+      {/* <Box
+        bg="white"
+        borderBottom="2px solid"
+        borderBottomColor="gray.300"
+        position="sticky"
+        top="4rem"
+        zIndex={1}
+      >
+        <Container maxW={{ base: "container.md", lg: "container.lg" }} py={3}>
+          <Button variant="light">
+            <Icon boxSize={4} as={FaImage} />
+          </Button>
+        </Container>
+      </Box> */}
       <Container
         maxW={{ base: "container.md", lg: "container.lg" }}
         h={{ base: "auto", md: "calc(100vh - 4rem)" }}
-      ></Container>
+      >
+        <Stack mt={4}>
+        <Textarea
+          resize="none"
+          overflowY="hidden"
+          rows={1}
+          border="none"
+          bg="transparent"
+          placeholder="Title (optional)"
+          fontWeight="bold"
+          fontSize="2xl"
+          _focusVisible={{ boxShadow: "none" }}
+          onChange={(e) => {
+            e.target.style.height = "auto";
+            e.target.style.height = e.target.scrollHeight + "px";
+          }}
+        />
+        <Textarea
+          resize="none"
+          overflowY="hidden"
+          rows={1}
+          border="none"
+          bg="transparent"
+          placeholder="Enter your discussion here..."
+          _focusVisible={{ boxShadow: "none" }}
+          onChange={(e) => {
+            e.target.style.height = "auto";
+            e.target.style.height = e.target.scrollHeight + "px";
+          }}
+        />
+        </Stack>
+      </Container>
     </Flex>
   );
 }

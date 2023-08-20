@@ -1,4 +1,4 @@
-import { Flex, Stack } from "@chakra-ui/react";
+import { Avatar, Button, Flex, Stack } from "@chakra-ui/react";
 import SidebarButton from "./SidebarButton";
 import {
   FaLandmark,
@@ -21,6 +21,7 @@ export default function BottomBar() {
       justifyContent="start"
       borderTopWidth="2px"
       borderColor="gray.300"
+      zIndex={2}
     >
       <Flex justifyContent="space-around" w="full">
         <SidebarButton
@@ -52,6 +53,24 @@ export default function BottomBar() {
         >
           Community
         </SidebarButton>
+        <Button
+          justifyContent="center"
+          alignItems="center"
+          cursor="pointer"
+          py="1.4rem"
+          px={3}
+          // w="100%"
+          color="gray.500"
+          bg="transparent"
+          border="2px"
+          borderColor="transparent"
+          fontSize="md"
+          _hover={{
+            bg: "gray.100",
+          }}
+        >
+          <Avatar size="xs" />
+        </Button>
       </Flex>
     </Flex>
   );

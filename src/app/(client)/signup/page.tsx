@@ -17,8 +17,59 @@ import {
 import HeadBar from "@/layouts/HeadBar";
 import AuthButtonGroup from "@/components/AuthButtonGroup";
 import ImageCaption from "@/components/ImageCaption";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function SignUp() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+  const supabase = createClientComponentClient();
+
+  const handleSignUp = async () => {
+    await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: `${location.origin}/auth/callback`,
+      },
+    });
+    router.refresh();
+  };
+
+  const handleGoogleSignUp = async () => {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      // options: {
+      //   queryParams: {
+      //     access_type: "offline",
+      //     prompt: "consent",
+      //   },
+      // },
+    });
+
+    console.log(data);
+  };
+
+  async function signInWithAzure() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "azure",
+      options: {
+        scopes: "email",
+      },
+    });
+  }
+
+  const getData = async () => {
+    let { data, error } = await supabase.from("test").select("id");
+    console.log(data);
+  }
+
+  useEffect(() => {
+    getData();
+  });
+
   return (
     <Flex bg="gray.50" w="full" flexDirection="column">
       <HeadBar>
@@ -31,7 +82,6 @@ export default function SignUp() {
           SignUp
         </Text>
         <AuthButtonGroup />
-
       </HeadBar>
       <SimpleGrid
         columns={{ base: 1, md: 2 }}
@@ -47,7 +97,12 @@ export default function SignUp() {
           borderEnd="2px"
           borderColor="gray.300"
         >
-          <Image h="full" w="full" objectFit="cover" src="the_entry_of_king_othon_of_greece_in_athens.jpg" />
+          <Image
+            h="full"
+            w="full"
+            objectFit="cover"
+            src="the_entry_of_king_othon_of_greece_in_athens.jpg"
+          />
           <ImageCaption />
         </Flex>
         <Center>
@@ -65,6 +120,8 @@ export default function SignUp() {
                 id="email"
                 placeholder="Enter your email"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <FormLabel htmlFor="password" mt={4}>
                 Password
@@ -74,12 +131,25 @@ export default function SignUp() {
                 id="password"
                 placeholder="********"
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </FormControl>
-            
+
             <Stack spacing="4">
-              <Button variant="blueWithShadow">Sign up</Button>
-              <Button variant="gray">Sign up with Google</Button>
+              <Button variant="blueWithShadow" onClick={handleSignUp}>
+                Sign up
+              </Button>
+              <Button
+                variant="gray"
+                onClick={handleGoogleSignUp}
+                leftIcon={<Image src="/google.svg" boxSize="4" />}
+              >
+                Sign up with Google
+              </Button>
+              <Button variant="gray" leftIcon={<Image src="/microsoft.svg" boxSize="4" />} onClick={signInWithAzure}>
+                Sign up with Microsoft
+              </Button>
             </Stack>
           </Stack>
         </Center>

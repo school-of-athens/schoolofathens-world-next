@@ -14,16 +14,15 @@ import {
   Textarea,
   VStack,
   Stack,
-  IconButton,
-  HStack,
-  Image,
-  Circle,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import HeadBar from "@/layouts/HeadBar";
+import { Prose } from "@nikolovlazar/chakra-ui-prose";
+import { generateHTML } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import Image from "@tiptap/extension-image";
+import { exampleArticlePost } from "@/data/examples";
 import {
-  FaChevronLeft,
-  FaChevronRight,
   FaRegComment,
   FaRegEye,
   FaSquareCaretDown,
@@ -31,12 +30,8 @@ import {
 } from "react-icons/fa6";
 import Comment from "@/components/Comment";
 import UserButton from "@/components/UserButton";
-import { useState } from "react";
-import { exampleDiscussionPost as discussion } from "@/data/examples";
 
-export default function NewDiscussion() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
+export default function Article() {
   return (
     <Flex bg="white" w="full" flexDirection="column">
       <HeadBar>
@@ -46,7 +41,7 @@ export default function NewDiscussion() {
           fontFamily="Merriweather"
           color="gray.600"
         >
-          Discussion
+          Article
         </Text>
         <ButtonGroup spacing={4}>
           {/* <Button variant="lightBlueWithShadow">Sign In</Button>
@@ -62,83 +57,34 @@ export default function NewDiscussion() {
           <Button variant="blueWithShadow">Post</Button>
         </ButtonGroup>
       </HeadBar>
+      <Box bg="blue.200" w="full" h="15rem"></Box>
+      <Stack align="center">
+        <Flex justifyContent="center">
+          <Heading
+            textAlign="center"
+            size="lg"
+            bg="gray.50"
+            py={2}
+            px={4}
+            mt="-1rem"
+            borderBottom="2px solid"
+            borderColor="gray.300"
+          >
+            This is the title
+          </Heading>
+        </Flex>
+<UserButton />
+      </Stack>
       <Container
         maxW={{ base: "container.md" }}
         // h={{ base: "auto", md: "calc(100vh - 4rem)" }}
         py={4}
       >
-        <Flex mb={2} ms="-0.5rem">
-          <UserButton />
-        </Flex>
-        <Text fontWeight="900" fontSize="2xl" mb={2}>
-          {discussion.title}
-        </Text>
-        <Text fontSize="lg">{discussion.body}</Text>
-        {discussion.images && (
-          <Flex w="full" position="relative" mt={4} mb={2}>
-            <IconButton
-              variant="light"
-              display={currentSlide === 0 ? "none" : "inline-flex"}
-              icon={<FaChevronLeft />}
-              aria-label="previous slide"
-              position="absolute"
-              borderRadius="full"
-              left="3"
-              top="45%"
-              onClick={() => {
-                if (currentSlide > 0) {
-                  setCurrentSlide(currentSlide - 1);
-                }
-              }}
-            />
-            <IconButton
-              variant="light"
-              display={
-                currentSlide === discussion.images.length - 1
-                  ? "none"
-                  : "inline-flex"
-              }
-              icon={<FaChevronRight />}
-              aria-label="next slide"
-              position="absolute"
-              borderRadius="full"
-              right="3"
-              top="45%"
-              onClick={() => {
-                if (
-                  discussion.images &&
-                  currentSlide < discussion.images.length
-                ) {
-                  setCurrentSlide(currentSlide + 1);
-                }
-              }}
-            />
-            <HStack
-              position="absolute"
-              width="full"
-              justify="center"
-              bottom="0"
-              py="4"
-            >
-              {discussion.images.map((_, index) => (
-                <Circle
-                  key={index}
-                  size="2"
-                  bg={currentSlide === index ? "white" : "whiteAlpha.600"}
-                />
-              ))}
-            </HStack>
-            <Image
-              borderRadius="lg"
-              border="2px solid"
-              borderColor="gray.300"
-              src={discussion.images[currentSlide]}
-              objectFit="cover"
-              alt="image"
-            />
-          </Flex>
-        )}
-
+        <Prose
+          dangerouslySetInnerHTML={{
+            __html: generateHTML(exampleArticlePost.body, [StarterKit, Image]),
+          }}
+        ></Prose>
         <Flex
           w="full"
           justifyContent="space-between"
