@@ -17,7 +17,6 @@
     "@emotion/styled": "^11.11.0",
     "@motionone/utils": "^10.15.1",
     "@nikolovlazar/chakra-ui-prose": "^1.2.1",
-    "@supabase/auth-helpers-nextjs": "^0.7.4",
     "@supabase/supabase-js": "^2.32.0",
     "@tiptap/extension-character-count": "^2.0.3",
     "@tiptap/extension-color": "^2.0.3",
@@ -26,19 +25,14 @@
     "@tiptap/pm": "^2.0.3",
     "@tiptap/react": "^2.0.3",
     "@tiptap/starter-kit": "^2.0.3",
-    "@types/node": "20.4.8",
-    "@types/react": "18.2.18",
-    "@types/react-dom": "18.2.7",
     "country-list": "^2.3.0",
     "framer-motion": "^10.15.1",
     "next": "^13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.10.1",
-    "typescript": "5.1.6"
+    "react-icons": "^4.10.1"
   },
   "devDependencies": {
-    "@types/country-list": "^2.1.1",
     "supabase": "^1.86.2"
   }
 }
