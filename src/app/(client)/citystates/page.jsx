@@ -121,7 +121,7 @@ export default function CityStates() {
       </Flex>
 
       <Container
-        maxW={{ base: "container.md", lg: "container.lg" }}
+        maxW={{ base: "container.lg", lg: "container.xl" }}
         // h="calc(100vh - 4rem)"
         pt={4}
       >

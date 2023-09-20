@@ -50,14 +50,14 @@ export default function NewDiscussion() {
         top="4rem"
         zIndex={1}
       >
-        <Container maxW={{ base: "container.md", lg: "container.lg" }} py={3}>
+        <Container maxW={{ base: "container.lg", lg: "container.xl" }} py={3}>
           <Button variant="light">
             <Icon boxSize={4} as={FaImage} />
           </Button>
         </Container>
       </Box> */}
       <Container
-        maxW={{ base: "container.md", lg: "container.lg" }}
+        maxW={{ base: "container.lg", lg: "container.xl" }}
         h={{ base: "auto", md: "calc(100vh - 4rem)" }}
       >
         <Stack mt={4}>

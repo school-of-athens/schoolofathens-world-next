@@ -17,7 +17,7 @@ export default function Comment() {
       borderColor="gray.300"
       py={2}
     >
-      <Container maxW={{ base: "container.md", lg: "container.lg" }}>
+      <Container maxW={{ base: "container.lg", lg: "container.xl" }}>
         <Flex pt={2}>
           <Avatar me={4} size="md" />
           <Flex flexDirection="column">

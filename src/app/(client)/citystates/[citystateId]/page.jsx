@@ -73,7 +73,7 @@ export default function CityStateHome() {
           scrollSnapAlign="start"
         >
           <Box bg="blue.200" w="full" h="15rem"></Box>
-          <Container maxW={{ base: "container.md", lg: "container.lg" }}>
+          <Container maxW={{ base: "container.lg", lg: "container.xl" }}>
             <Avatar size="2xl" mt="-4rem" />
             <Heading size="md" mt={4}>
               CityState Name
@@ -130,7 +130,7 @@ export default function CityStateHome() {
         </Box>
         <Container
           scrollSnapAlign="start"
-          maxW={{ base: "container.md", lg: "container.lg" }}
+          maxW={{ base: "container.lg", lg: "container.xl" }}
           h={{ base: "auto", md: "calc(100vh - 4rem)" }}
         >
           <Grid

@@ -31,14 +31,14 @@ export default function Profile() {
         <AuthButtonGroup />
       </HeadBar>
       <Box w="full" borderBottom="2px" borderColor="gray.300" bg="gray.100">
-        <Container maxW={{ base: "container.md", lg: "container.lg" }} py={12}>
+        <Container maxW={{ base: "container.lg", lg: "container.xl" }} py={12}>
           <Flex alignItems="center">
             <Avatar size="2xl" me={12} />
             <Heading size="md">User Name</Heading>
           </Flex>
         </Container>
       </Box>
-      <Container maxW={{ base: "container.md", lg: "container.lg" }} py={12}>
+      <Container maxW={{ base: "container.lg", lg: "container.xl" }} py={12}>
         <Card py={4} px={4}>
           <Heading size="sm">Bio</Heading>
           <Text>

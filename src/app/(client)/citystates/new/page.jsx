@@ -35,7 +35,7 @@ function NewGroup() {
         </Text>
         <AuthButtonGroup />
       </HeadBar>
-      <Container maxW={{ base: "container.md", lg: "container.lg" }} py={12}>
+      <Container maxW={{ base: "container.lg", lg: "container.xl" }} py={12}>
         <Grid templateColumns="repeat(12, 1fr)">
           <GridItem colSpan={{ base: 12, md: 4, lg: 3 }}>
             <NewGroupStepper

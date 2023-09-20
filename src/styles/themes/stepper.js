@@ -1,7 +1,7 @@
 const baseStyle = {
   step: {
-    border: "2px",
-    borderColor: "gray.200",
+    // border: "2px",
+    // borderColor: "gray.200",
     borderRadius: "1rem",
     padding: {base: 2, md: 4},
     width: "100%",

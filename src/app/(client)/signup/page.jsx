@@ -31,25 +31,31 @@ export default function SignUp() {
     });
 
     console.log(data, error);
-  }
-
+  };
 
   const signUpWithGoogle = async () => {
-    alert("You are logged in!");
+    // alert(window.location.protocol + window.location.host + '/u/setup');
 
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-    },
-    {
-      redirectTo: 'http://localhost:3000/',
-    })
+    const { data, error } = await supabase.auth.signInWithOAuth(
+      {
+        provider: "google",
+        // q: for the redirectTo, I want to redirect to the current url plus /u/setup, how can I do that?
+        //
+        options: {
+          scope: ["email", "profile"],
+          prompt: "consent",
+          redirectTo: `${window.location.protocol}//${window.location.host}/u/setup`,
+        },
+      },
+      {
+        redirectTo: "/u/setup",
+      }
+    );
 
-    alert("You are logged in!");
-  
+    // alert("You are logged in!");
+    console.log("Hello");
     console.log(data, error);
-  }
-
-  
+  };
 
   return (
     <Flex bg="gray.50" w="full" flexDirection="column">
@@ -118,9 +124,7 @@ export default function SignUp() {
             </FormControl>
 
             <Stack spacing="4">
-              <Button variant="blueWithShadow"
-              onClick={signInWithEmail}
-              >
+              <Button variant="blueWithShadow" onClick={signInWithEmail}>
                 Sign up
               </Button>
               <Button

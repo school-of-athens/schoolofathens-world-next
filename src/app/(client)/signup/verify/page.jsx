@@ -30,7 +30,7 @@ export default function Verify() {
 
       </HeadBar>
       <Container
-        maxW={{ base: "container.md", lg: "container.lg" }}
+        maxW={{ base: "container.lg", lg: "container.xl" }}
         minH="calc(100vh - 4rem)"
         justifyContent="center"
         alignItems="center"

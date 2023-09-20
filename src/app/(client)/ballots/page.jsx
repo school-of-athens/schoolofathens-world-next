@@ -53,7 +53,7 @@ export default function Ballots() {
         </ButtonGroup>
       </HeadBar>
       <Container
-        maxW={{ base: "container.md", lg: "container.lg" }}
+        maxW={{ base: "container.lg", lg: "container.xl" }}
         // h="calc(100vh - 4rem)"
         pt={8}
       >

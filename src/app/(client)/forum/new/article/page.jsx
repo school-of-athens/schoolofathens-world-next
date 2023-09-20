@@ -118,7 +118,7 @@ export default function NewArticle() {
         top="4rem"
         zIndex={1}
       >
-        <Container maxW={{ base: "container.md", lg: "container.lg" }} py={3}>
+        <Container maxW={{ base: "container.lg", lg: "container.xl" }} py={3}>
           <MenuBar editor={editor} />
         </Container>
       </Box>

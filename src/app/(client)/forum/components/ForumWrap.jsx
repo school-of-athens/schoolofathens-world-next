@@ -4,7 +4,7 @@ import { Container, Grid } from "@chakra-ui/react";
 export default function ForumWrap({ children }) {
   return (
     <Container
-      maxW={{ base: "container.md", lg: "container.lg" }}
+      maxW={{ base: "container.lg", lg: "container.xl" }}
       h={{ base: "auto", md: "calc(100vh - 4rem)" }}
     >
       <Grid

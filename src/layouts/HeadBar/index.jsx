@@ -19,7 +19,7 @@ export default function HeadBar({ children }) {
       borderBottom="2px solid"
       borderBottomColor="gray.300"
     >
-      <Container maxW={{base: "container.md", lg: "container.lg"}} display="flex" alignItems="center">
+      <Container maxW={{base: "container.lg", lg: "container.xl"}} display="flex" alignItems="center">
         <DrawerButton />
         <Flex
           justifyContent="space-between"

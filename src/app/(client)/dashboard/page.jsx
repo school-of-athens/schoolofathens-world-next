@@ -27,7 +27,7 @@ export default function Dashboard() {
 
       </HeadBar>
       <Container
-        maxW={{ base: "container.md", lg: "container.lg" }}
+        maxW={{ base: "container.lg", lg: "container.xl" }}
         h="calc(100vh - 4rem)"
         py={12}
       >
