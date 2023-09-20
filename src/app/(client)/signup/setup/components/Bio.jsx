@@ -8,7 +8,7 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 
-export default function Bio({ setActiveStep, newVote, setNewVote }: any) {
+export default function Bio({ setActiveStep, newVote, setNewVote }) {
   return (
     <>
       <Heading mb={10} size="md">Share more about you</Heading>

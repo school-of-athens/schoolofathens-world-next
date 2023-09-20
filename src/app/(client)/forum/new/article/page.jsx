@@ -27,7 +27,7 @@ import CharacterCount from "@tiptap/extension-character-count";
 import EditableTitle from "../components/EditableTitle";
 
 export default function NewArticle() {
-  const [content, setContent] = useState<any>(null);
+  const [content, setContent] = useState(null);
   // if (content) {
   //   console.log(generateHTML(content, [StarterKit, Image]));
   // }
