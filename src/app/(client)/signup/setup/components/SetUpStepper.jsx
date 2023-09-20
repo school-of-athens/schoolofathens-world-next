@@ -10,7 +10,7 @@ import {
     Box,
   } from "@chakra-ui/react";
   
-  export default function SetUpStepper({ activeStep, setActiveStep }: any) {
+  export default function SetUpStepper({ activeStep, setActiveStep }) {
     return (
       <Stepper
         size={{ base: "xs", sm: "sm", md: "md", lg: "lg" }}
