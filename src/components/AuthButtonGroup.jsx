@@ -7,8 +7,8 @@ export default function AuthButtonGroup() {
       <Link href="/signup">
         <Button variant="lightBlueWithShadow">Sign up</Button>
       </Link>
-      <Link href="/login">
-        <Button variant="grayWithShadow">Log in</Button>
+      <Link href="/signin">
+        <Button variant="grayWithShadow">Sign in</Button>
       </Link>
     </ButtonGroup>
   );

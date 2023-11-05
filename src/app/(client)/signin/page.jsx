@@ -14,6 +14,7 @@ import {
   HStack,
   Link,
   Image,
+  useToast,
 } from "@chakra-ui/react";
 import HeadBar from "@/layouts/HeadBar";
 import NextLink from "next/link";
@@ -23,6 +24,7 @@ import supabase from "@/services/supabase";
 import { useState } from "react";
 
 export default function Login() {
+  const toast = useToast();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -32,7 +34,18 @@ export default function Login() {
       password: password,
     });
 
-    console.log(data, error);
+    console.log(data)
+
+    if (error) {
+      toast({
+        title: `Error: ${error.message}`,
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+        variant: 'left-accent',
+        position: 'bottom-left',
+      })
+    }
   };
 
   return (
@@ -68,7 +81,7 @@ export default function Login() {
         >
           <Stack spacing="8">
             <Stack spacing="3" textAlign="center">
-              <Heading size="xs">Log in to your account</Heading>
+              <Heading size="xs">Sign in to your account</Heading>
               <Text color="fg.muted">Start making your dreams come true</Text>
             </Stack>
             <Stack spacing="6">

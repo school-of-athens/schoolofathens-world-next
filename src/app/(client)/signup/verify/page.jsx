@@ -13,8 +13,18 @@ import {
 import HeadBar from "@/layouts/HeadBar";
 import { FaEnvelopeOpenText } from "react-icons/fa6";
 import AuthButtonGroup from "@/components/AuthButtonGroup";
+import { useContext } from "react";
+import { AppContext } from "@/context/AppContext";
+import supabase from "@/services/supabase";
 
 export default function Verify() {
+  const { user } = useContext(AppContext);
+
+  const checkVerification = async () => {
+    const { data, error } = await supabase.auth.refreshSession();
+    console.log(data);
+  };
+
   return (
     <Flex bg="gray.50" w="full" flexDirection="column">
       <HeadBar>
@@ -27,7 +37,6 @@ export default function Verify() {
           Verify Your Email
         </Text>
         <AuthButtonGroup />
-
       </HeadBar>
       <Container
         maxW={{ base: "container.lg", lg: "container.xl" }}
@@ -49,13 +58,22 @@ export default function Verify() {
         <Heading size="md" mt={8}>
           Please verify your email
         </Heading>
-        <Text my={4} textAlign="center">
+        <Text mt={4} mb={8} textAlign="center">
           Check your inbox! We sent an email verification link to
-          name@example.com
+          {user?.email}
         </Text>
 
-        <Button variant="blueWithShadow">I verified my email</Button>
-        <Button variant="light" mt={3}>
+        <Button variant="blueWithShadow" onClick={checkVerification}>
+          I verified my email
+        </Button>
+        <Button
+          variant="light"
+          mt={3}
+          onClick={async () => {
+            const { data, error } = await supabase.auth.getSession();
+            console.log(data);
+          }}
+        >
           Resend verification email
         </Button>
       </Container>

@@ -9,22 +9,34 @@ import {
   Divider,
   Link,
   textDecoration,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
 } from "@chakra-ui/react";
 import {
   FaLandmark,
   FaCheckToSlot,
   FaGroupArrowsRotate,
   FaCampground,
+  FaRightFromBracket,
+  FaHouse,
+  FaUser,
 } from "react-icons/fa6";
 import SidebarButton from "./SidebarButton";
 import CityStateButton from "./CityStateButton";
 import NextLink from "next/link";
+import supabase from "@/services/supabase";
+import useSignOut from "@/hooks/useSignOut";
 
 export default function MainSidebar() {
+
+  const signOut = useSignOut();
+
   return (
     <Flex
       alignItems="center"
-      overflowY="hidden"
+      // overflowY="hidden"
       zIndex="4"
       bg="white"
       display={{ base: "none", md: "flex" }}
@@ -158,24 +170,41 @@ export default function MainSidebar() {
         bg="white"
         height="5rem"
       >
-        <Link as={NextLink} href="/u/1234" w="full" _hover={{textDecoration: "none"}}>
-          <HStack
-            justifyContent={{ base: "center", xl: "space-between" }}
-            spacing="3"
-            w="full"
-            bg={{ base: "none", xl: "gray.100" }}
-            _hover={{ bg: "gray.200" }}
-            p={{ base: 0, xl: 3 }}
-            borderRadius="lg"
-          >
-            <Avatar boxSize="10" src="https://i.pravatar.cc/300" />
-            <Box display={{ base: "none", xl: "flex" }}>
-              <Text textStyle="sm" fontWeight="medium">
-                John Doe
-              </Text>
-            </Box>
-          </HStack>
-        </Link>
+        <Menu zIndex={5} position="absolute">
+          <MenuButton>
+            <HStack
+              justifyContent={{ base: "center", xl: "space-between" }}
+              spacing="3"
+              w="full"
+              bg={{ base: "none", xl: "gray.100" }}
+              _hover={{ bg: "gray.200" }}
+              p={{ base: 0, xl: 3 }}
+              borderRadius="lg"
+            >
+              <Avatar boxSize="10" src={supabase.auth.getUser()} />
+              <Box display={{ base: "none", xl: "flex" }}>
+                <Text textStyle="sm" fontWeight="medium">
+                  John Doe
+                </Text>
+              </Box>
+            </HStack>
+          </MenuButton>
+          <MenuList color="gray.600">
+            <MenuItem icon={<FaHouse />}>
+              <NextLink href="/dashboard">
+                Dashboard
+              </NextLink>
+            </MenuItem>
+            <MenuItem icon={<FaUser/>}>
+              <NextLink href="/u/1234">
+                Profile
+              </NextLink>
+            </MenuItem>
+            <MenuItem icon={<FaRightFromBracket />} onClick={signOut}>
+                Sign out
+            </MenuItem>
+          </MenuList>
+        </Menu>
       </Flex>
       {/* <Box flex="1" justifySelf="stretch" alignSelf="stretch" mb="48px"></Box> */}
     </Flex>

@@ -13,48 +13,53 @@ import {
   Link,
   SimpleGrid,
   Image,
+  useToast,
 } from "@chakra-ui/react";
 import HeadBar from "@/layouts/HeadBar";
 import AuthButtonGroup from "@/components/AuthButtonGroup";
 import ImageCaption from "@/components/ImageCaption";
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import useSignUpWithEmail from "@/hooks/useSignUpWithEmail";
+import useSignInWithGoogle from "@/hooks/useSignInWithGoogle";
 import supabase from "@/services/supabase";
+import { AppContext } from "@/context/AppContext";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
+  // const { email, password, setEmail, setPassword, signUpWithEmail } =
+  //   useSignUpWithEmail();
+  const { setUser } = useContext(AppContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const toast = useToast();
+  const signUpWithGoogle = useSignInWithGoogle();
+  const router = useRouter();
 
-  const signInWithEmail = async () => {
-    const { data, error } = await supabase.auth.signUp({
-      email: email,
-      password: password,
-    });
-
-    console.log(data, error);
-  };
-
-  const signUpWithGoogle = async () => {
-    // alert(window.location.protocol + window.location.host + '/u/setup');
-
-    const { data, error } = await supabase.auth.signInWithOAuth(
-      {
-        provider: "google",
-        // q: for the redirectTo, I want to redirect to the current url plus /u/setup, how can I do that?
-        //
+  const signUpWithEmail = async () => {
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
         options: {
-          scope: ["email", "profile"],
-          prompt: "consent",
-          redirectTo: `${window.location.protocol}//${window.location.host}/u/setup`,
+          emailRedirectTo: "/auth/verified",
         },
-      },
-      {
-        redirectTo: "/u/setup",
-      }
-    );
+      });
 
-    // alert("You are logged in!");
-    console.log("Hello");
-    console.log(data, error);
+      setUser(data.user);
+
+      router.push("/signup/verify");
+
+      if (error) throw error;
+    } catch (error) {
+      toast({
+        title: `Error: ${error.message}`,
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+        variant: "left-accent",
+        position: "bottom-left",
+      });
+    }
   };
 
   return (
@@ -97,7 +102,7 @@ export default function SignUp() {
             <Stack spacing={{ base: "2", md: "3" }} textAlign="center">
               <Heading size={{ base: "xs", md: "sm" }}>Sign Up</Heading>
               <Text color="fg.muted">
-                Already have an account? <Link href="#">Log in</Link>
+                Already have an account? <Link href="#">Sign in</Link>
               </Text>
             </Stack>
             <FormControl>
@@ -124,7 +129,7 @@ export default function SignUp() {
             </FormControl>
 
             <Stack spacing="4">
-              <Button variant="blueWithShadow" onClick={signInWithEmail}>
+              <Button variant="blueWithShadow" onClick={signUpWithEmail}>
                 Sign up
               </Button>
               <Button
@@ -134,9 +139,6 @@ export default function SignUp() {
               >
                 Sign up with Google
               </Button>
-              {/* <Button variant="gray" leftIcon={<Image src="/microsoft.svg" boxSize="4" />} onClick={signInWithAzure}>
-                Sign up with Microsoft
-              </Button> */}
             </Stack>
           </Stack>
         </Center>

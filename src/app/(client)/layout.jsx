@@ -7,23 +7,6 @@ import { AppContext, AppProvider } from "@/context/AppContext";
 import supabase from "@/services/supabase";
 
 export default function RootLayout({ children }) {
-  const [session, setSession] = useState(null);
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      console.log(session);
-    });
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-      console.log(session);
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
 
   // if (!session) {
   //   alert("You are not logged in!");

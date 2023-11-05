@@ -1,13 +1,10 @@
 "use client";
 
 import {
-  Button,
-  ButtonGroup,
   Container,
   Flex,
   Grid,
   GridItem,
-  Heading,
   Text,
   useSteps,
 } from "@chakra-ui/react";
@@ -17,6 +14,7 @@ import SetUpStepper from "./components/SetUpStepper";
 import BasicInfo from "./components/BasicInfo";
 import Statistics from "./components/Statistics";
 import Bio from "./components/Bio";
+import supabase from "@/services/supabase";
 
 export default function SetUp() {
   const { activeStep, setActiveStep } = useSteps({
@@ -35,7 +33,8 @@ export default function SetUp() {
         >
           Set Up Profile
         </Text>
-        <AuthButtonGroup />
+        {!supabase.auth && <AuthButtonGroup /> }
+        
       </HeadBar>
       <Container maxW={{ base: "container.lg", lg: "container.xl" }} py={12}>
         <Grid templateColumns="repeat(12, 1fr)">

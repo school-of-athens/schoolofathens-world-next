@@ -31,14 +31,9 @@ export default function NewDiscussion() {
         <ButtonGroup spacing={4}>
           {/* <Button variant="lightBlueWithShadow">Sign In</Button>
           <Button variant="grayWithShadow">Sign Up</Button> */}
-          <Link
-            as={NextLink}
-            href="/forum/guidelines"
-            display="flex"
-            alignItems="center"
-          >
-            Guidelines
-          </Link>
+          <Button variant="light">
+            <Icon boxSize={4} as={FaImage} />
+          </Button>
           <Button variant="blueWithShadow">Publish</Button>
         </ButtonGroup>
       </HeadBar>
@@ -58,37 +53,37 @@ export default function NewDiscussion() {
       </Box> */}
       <Container
         maxW={{ base: "container.lg", lg: "container.xl" }}
-        h={{ base: "auto", md: "calc(100vh - 4rem)" }}
+        minH={{ base: "auto", md: "calc(100vh - 4rem)" }}
       >
         <Stack mt={4}>
-        <Textarea
-          resize="none"
-          overflowY="hidden"
-          rows={1}
-          border="none"
-          bg="transparent"
-          placeholder="Title (optional)"
-          fontWeight="bold"
-          fontSize="2xl"
-          _focusVisible={{ boxShadow: "none" }}
-          onChange={(e) => {
-            e.target.style.height = "auto";
-            e.target.style.height = e.target.scrollHeight + "px";
-          }}
-        />
-        <Textarea
-          resize="none"
-          overflowY="hidden"
-          rows={1}
-          border="none"
-          bg="transparent"
-          placeholder="Enter your discussion here..."
-          _focusVisible={{ boxShadow: "none" }}
-          onChange={(e) => {
-            e.target.style.height = "auto";
-            e.target.style.height = e.target.scrollHeight + "px";
-          }}
-        />
+          <Textarea
+            resize="none"
+            overflowY="hidden"
+            rows={1}
+            border="none"
+            bg="transparent"
+            placeholder="Title (optional)"
+            fontWeight="bold"
+            fontSize="2xl"
+            _focusVisible={{ boxShadow: "none" }}
+            onChange={(e) => {
+              e.target.style.height = "auto";
+              e.target.style.height = e.target.scrollHeight + "px";
+            }}
+          />
+          <Textarea
+            resize="none"
+            overflowY="hidden"
+            rows={1}
+            border="none"
+            bg="transparent"
+            placeholder="Enter your discussion here..."
+            _focusVisible={{ boxShadow: "none" }}
+            onChange={(e) => {
+              e.target.style.height = "auto";
+              e.target.style.height = e.target.scrollHeight + "px";
+            }}
+          />
         </Stack>
       </Container>
     </Flex>

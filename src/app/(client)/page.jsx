@@ -119,8 +119,8 @@ export default function MainSite() {
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="/login" as={NextLink}>
-              /login: login page
+            <Link href="/signin" as={NextLink}>
+              /signin: login page
             </Link>
           </ListItem>
           <ListItem>
